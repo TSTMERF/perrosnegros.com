@@ -1,0 +1,16 @@
+<md-content ng-controller='userPaymentController'>
+	<md-toolbar>
+      <div class="md-toolbar-tools" style="background-color: black">
+        <h2><span>Pagos</span></h2>
+        <md-card-avatar>
+           <img src="images/perro1.png" class="md-user-avatar"/>
+        </md-card-avatar>
+      </div>
+    </md-toolbar>
+	<md-input-container class="md-block">
+<label>Experiencia (Opcional)</label>
+		<md-select ng-model="info.Sport">
+			<md-option ng-repeat="Sport in sports" value={{Sport.name}}>{{Sport.name}}</md-option>
+		</md-select>
+	</md-input-container>
+</md-content>
