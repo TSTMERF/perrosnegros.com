@@ -121,9 +121,18 @@
 		$scope.gotoArdillas=function(){
 			$scope.showSpringFemale=false;
 			$scope.showAutumnFemale=false;
-			$scope.showAutumnYouth=false;
 			$scope.showSpringFemale2=false;
+			//
+			$scope.showAutumnYouth=false;
 			$scope.showSpringYouth=false;
+			//
+			$scope.showPonys=false;
+			$scope.showTauros=false;
+			$scope.showFalcons=false;
+			$scope.showIrons=false;
+			$scope.showHornets=false;
+			$scope.showRabbits=false;
+			//
 			$scope.showCastores=false;
 			$scope.showZorros=false;
 			$scope.showArdillas=true;
@@ -133,9 +142,18 @@
 		$scope.gotoCastores=function(){
 			$scope.showSpringFemale=false;
 			$scope.showAutumnFemale=false;
-			$scope.showAutumnYouth=false;
 			$scope.showSpringFemale2=false;
+			//
+			$scope.showAutumnYouth=false;
 			$scope.showSpringYouth=false;
+			//
+			$scope.showPonys=false;
+			$scope.showTauros=false;
+			$scope.showFalcons=false;
+			$scope.showIrons=false;
+			$scope.showHornets=false;
+			$scope.showRabbits=false;
+			//
 			$scope.showArdillas=false;
 			$scope.showZorros=false;
 			$scope.showCastores=true;
@@ -145,9 +163,18 @@
 		$scope.gotoZorros=function(){
 			$scope.showSpringFemale=false;
 			$scope.showAutumnFemale=false;
-			$scope.showAutumnYouth=false;
 			$scope.showSpringFemale2=false;
+			//
+			$scope.showAutumnYouth=false;
 			$scope.showSpringYouth=false;
+			//
+			$scope.showPonys=false;
+			$scope.showTauros=false;
+			$scope.showFalcons=false;
+			$scope.showIrons=false;
+			$scope.showHornets=false;
+			$scope.showRabbits=false;
+			//
 			$scope.showArdillas=false;
 			$scope.showCastores=false;
 			$scope.showZorros=true;
