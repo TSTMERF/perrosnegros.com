@@ -94,6 +94,36 @@
                             <img src="images/Slogan.png">
                         </div>
                         <h3 class="section-subheading text-muted">Dejando Huella</h3>
+                        <md-subheader><font color="#25A322" face="verdana"><strong>El concepto llamado Perros Negros.</strong></font></md-subheader>
+                        <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                        <video controls class="img-responsive">
+                                            <source src="videos/El Concepto Llamado Perros Negros de Naucalpan2.mp4" type="video/mp4">
+                                        </video> 
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                         <h6>Perros Negros</h6>
+                                         <p></p>
+                                    </div>
+                                </div>
+                        </div>
+                        <br><br>
+                        <md-subheader><font color="#25A322" face="verdana"><strong>Semillero del salón de la fama del futbol americano mexicano.</strong></font></md-subheader>
+                        <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                        <video controls class="img-responsive">
+                                            <source src="videos/Perros Negros, semillero del Salón de la Fama del futbol americano mexicano.mp4" type="video/mp4">
+                                        </video> 
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                         <h6>Semillero de futbol americano mexicano</h6>
+                                         <p></p>
+                                    </div>
+                                </div>
+                        </div>
+                        <br><br><br>
                         <md-list ng-controller="aboutController as ctrl" ng-cloak>
                             <md-subheader><font color="orange">Más acerca de nosotros</font></md-subheader>
                             <md-list-item  class="secondary-button-padding" ng-click="ctrl.missionAction($event)">
@@ -851,7 +881,7 @@
                                 <div>
                                     <input type="checkbox" ng-model="info.ShowSiblings">
                                     &nbsp;&nbsp;
-                                    <label>Tienes hermanos en el clup.</label>
+                                    <label>Tienes hermanos en el club</label>
                                 </div>
                                 <md-input-container>
                                     <label>No. de Hermanos en el club</label>
@@ -1268,8 +1298,8 @@
                                             </div>
                                         </md-input-container>
                                         <md-input-container class="md-block">
-                                            <label>Categorias: (Opcional)</label>
-                                            <md-select ng-model="info.Category">
+                                            <label>Categorias:</label>
+                                            <md-select ng-model="info.Category" placeholder="selecciona una">
                                                 <md-option ng-repeat="Category in Categories" value={{Category.name}}>{{Category.name}}</md-option>
                                             </md-select>
                                         </md-input-container>
