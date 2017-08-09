@@ -28,13 +28,20 @@
 			{id:2, name:'Veterano'}
 		];
 		$scope.Categories=[
-			{id:1, name:'Rabbits Especial'},
-			{id:2, name:'Rabbits'},
-			{id:3, name:'Hornets'},
-			{id:4, name:'Irons'},
-			{id:5, name:'Falcons'},
-			{id:6, name:'Tauros'},
-			{id:7, name:'Ponys'}
+			{id:1, name:'Ardillas'},
+			{id:2, name:'Castores'},
+			{id:3, name:'Zorros'},
+			{id:4, name:'Rabbits'},
+			{id:5, name:'Hornets'},
+			{id:6, name:'Irons'},
+			{id:7, name:'Falcons'},
+			{id:8, name:'Tauros'},
+			{id:9, name:'Ponys'},
+			{id:10, name:'Juvenil Otoño'},
+			{id:11, name:'Juvenil Primavera'},
+			{id:6, name:'Femenil Otoño'},
+			{id:6, name:'Femenil Primavera'},
+			{id:6, name:'Femenil Otra'}
 		];
 	});
 })();
