@@ -12,19 +12,17 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone']) &&
     $mail->From = $_POST['email'];
     $mail->FromName = $_POST['name'];
     $mail->AddAddress('athan360@gmail.com'); //recipient 
-    $mail->Subject = $_POST['phone'];
-    $mail->Body = "Name: " . $_POST['name'] . "\r\n\r\nMessage: " . stripslashes($_POST['Message']);
+    $mail->Subject ="Dudas de usuario";
+    $mail->Body = "Name: " . $_POST['name'] . "\r\n\r\nMessage: " . stripslashes($_POST['Message'])."\r\n\r\nTeléfono:".$_POST['phone'];
  
     if (isset($_POST['ref'])) {
         $mail->Body .= "\r\n\r\nRef: " . $_POST['ref'];
     }
- 
     if(!$mail->send()) {
         $data = array('success' => false, 'message' => 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo);
         echo json_encode($data);
         exit;
     }
- 
     $data = array('success' => true, 'message' => 'Thanks! We have received your message.');
     echo json_encode($data);
  

@@ -24,6 +24,7 @@
 			$scope.showPrivacy=false;
 			$scope.showCategories=false;
 			$scope.showGallery=false;
+                        $scope.showEvent=false;
 			$location.hash('top');
 			$anchorScroll();
 		};
@@ -36,6 +37,7 @@
 			$scope.showPrivacy=false;
 			$scope.showCategories=false;
 			$scope.showGallery=false;
+                        $scope.showEvent=false;
 			$scope.showAbout=true;
 			$location.hash('about');
 			$anchorScroll();
@@ -49,7 +51,21 @@
 			$scope.showCategories=false;
 			$scope.showAbout=false;
 			$scope.showGallery=true;
+                       $scope.showEvent=false;
 			$location.hash('gallery');
+			$anchorScroll();
+		};
+               $scope.showEvent=false;
+		$scope.gotoEvent = function() {
+			$scope.showAbout=false;
+			$scope.showCategories=false;
+			$scope.showTeam=false;
+			$scope.showFacilities=false;
+			$scope.showPrivacy=false;
+			$scope.showGallery=false;
+			$scope.showContact=false;
+			$scope.showEvent=true;
+			$location.hash('event');
 			$anchorScroll();
 		};
 
@@ -61,6 +77,7 @@
 			$scope.showCategories=false;
 			$scope.showTeam=false;
 			$scope.showGallery=false;
+                        $scope.showEvent=false;
 			$scope.showFacilities=true;
 			$location.hash('facilities');
 			$anchorScroll();
@@ -73,6 +90,7 @@
 			$scope.showTeam=false;
 			$scope.showFacilities=false;
 			$scope.showGallery=false;
+                        $scope.showEvent=false;
 			$scope.showPrivacy=true;
 			$location.hash('noticeprivacy');
 			$anchorScroll();
@@ -86,6 +104,7 @@
 			$scope.showFacilities=false;
 			$scope.showPrivacy=false;
 			$scope.showGallery=false;
+                        $scope.showEvent=false;
 			$scope.showTeam=true;
 			$location.hash('team');
 			$anchorScroll();
@@ -98,6 +117,7 @@
 			$scope.showFacilities=false;
 			$scope.showPrivacy=false;
 			$scope.showGallery=false;
+                        $scope.showEvent=false;
 			$scope.showContact=true;
 			$location.hash('contact');
 			$anchorScroll();
@@ -111,6 +131,7 @@
 			$scope.showFacilities=false;
 			$scope.showPrivacy=false;
 			$scope.showGallery=false;
+                        $scope.showEvent=false;
 			$scope.showCategories=true;
 			$location.hash('categories');
 			$anchorScroll();
@@ -423,7 +444,7 @@
 		/*GALLERY*/
  		// Set of Photos--------------------------------------------------------------------------------
 		$scope.photos = [
-			{src: 'images/Áreas Ent 3.jpg', desc: 'Image 01'},
+			{src: 'images/evento1.jpg', desc: 'Image 01'},
 			{src: 'images/Entrenamiento 1.jpg', desc: 'Image 02'},
 			{src: 'images/Entrenamiento 2.jpg', desc: 'Image 03'},
 			{src: 'images/Entrenamiento 3.jpg', desc: 'Image 04'},
@@ -435,7 +456,8 @@
 			{src: 'images/Palcos 1.jpg', desc: 'Image 10'},
 			{src: 'images/Tribunas Local 1.jpg', desc: 'Image 11'},
 			{src: 'images/Tribunas Visitantes 1.jpg', desc: 'Image 12'},
-			{src: 'images/Vestidor 5.jpg', desc: 'Image 13'}
+			{src: 'images/Vestidor 5.jpg', desc: 'Image 13'},
+			{src: 'images/Áreas Ent 3.jpg', desc: 'Image 14'}
 		];
 		// initial image index
 		$scope._Index = 0;
@@ -613,6 +635,169 @@
 	        };
       	}
       /*---------------------------------------------------------------------------------------------*/
+       /*---------------------------------Entrenamiento----------------------------------------*/
+       $scope.showEntre = function(ev) {
+        $mdDialog.show({
+            controller: DialogController,
+            templateUrl: 'html/system/Entrenamiento.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true
+        })
+        .then(function(answer) {
+            $scope.status = 'You said the information was "' + answer + '".';
+          }, function() {
+              $scope.status = 'You cancelled the dialog.';
+          });
+        };
+        function DialogController($scope, $mdDialog) {
+        $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
+        };
+      }
+
+
+
+      /*----------------------------------------------------------------------------------------*/
+
+      /*-------------------------------Field of plat and training--------------------------------*/
+      	 $scope.showPlay = function(ev) {
+        $mdDialog.show({
+            controller: DialogController,
+            templateUrl: 'html/system/play-training.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true
+        })
+        .then(function(answer) {
+            $scope.status = 'You said the information was "' + answer + '".';
+          }, function() {
+              $scope.status = 'You cancelled the dialog.';
+          });
+        };
+        function DialogController($scope, $mdDialog) {
+        $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
+        };
+      }
+
+      /*------------------------------------------------------------------------------------------*/
+
+      /*--------------------------------OFFICCE---------------------------------------------------*/
+
+       $scope.showOffi = function(ev) {
+        $mdDialog.show({
+            controller: DialogController,
+            templateUrl: 'html/system/Office.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true
+        })
+        .then(function(answer) {
+            $scope.status = 'You said the information was "' + answer + '".';
+          }, function() {
+              $scope.status = 'You cancelled the dialog.';
+          });
+        };
+        function DialogController($scope, $mdDialog) {
+        $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
+        };
+      }
+
+      /*-----------------------------------------------------------------------------------------*/
+
+      /*------------------------------Medical service--------------------------------------------*/
+
+      $scope.showSer = function(ev) {
+        $mdDialog.show({
+            controller: DialogController,
+            templateUrl: 'html/system/MedicalService.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true
+        })
+        .then(function(answer) {
+            $scope.status = 'You said the information was "' + answer + '".';
+          }, function() {
+              $scope.status = 'You cancelled the dialog.';
+          });
+        };
+        function DialogController($scope, $mdDialog) {
+        $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
+        };
+      }
+
+      /*-----------------------------------------------------------------------------------------*/
+
+      /*-------------------------------GIMNASIO---------------------------------------------------*/
+      	$scope.showGim = function(ev) {
+    		$mdDialog.show({
+      			controller: DialogController,
+      			templateUrl: 'html/system/Gimnasio.html',
+      			parent: angular.element(document.body),
+      			targetEvent: ev,
+      			clickOutsideToClose:true
+    		})
+    		.then(function(answer) {
+      			$scope.status = 'You said the information was "' + answer + '".';
+    			}, function() {
+      				$scope.status = 'You cancelled the dialog.';
+    			});
+  			};
+        function DialogController($scope, $mdDialog) {
+    		$scope.answer = function(answer) {
+      			$mdDialog.hide(answer);
+    		};
+   		}
+   	/*------------------------------------------------------------------------------------------*/
+
+   	/*----------------------------------PALCOS--------------------------------------------------*/
+
+   		$scope.showPal = function(ev) {
+    		$mdDialog.show({
+      			controller: DialogController,
+      			templateUrl: 'html/system/Palcos.html',
+      			parent: angular.element(document.body),
+      			targetEvent: ev,
+      			clickOutsideToClose:true
+    		})
+    		.then(function(answer) {
+      			$scope.status = 'You said the information was "' + answer + '".';
+    			}, function() {
+      				$scope.status = 'You cancelled the dialog.';
+    			});
+  			};
+        function DialogController($scope, $mdDialog) {
+    		$scope.answer = function(answer) {
+      			$mdDialog.hide(answer);
+    		};
+   		}
+   	/*--------------------------------------------------------------------------------------------*/
+
+   	/*-------------------------BUILDING AND BATHROOM----------------------------------------------*/
+
+   		$scope.showBB = function(ev) {
+    		$mdDialog.show({
+      			controller: DialogController,
+      			templateUrl: 'html/system/Buildings.html',
+      			parent: angular.element(document.body),
+      			targetEvent: ev,
+      			clickOutsideToClose:true
+    		})
+    		.then(function(answer) {
+      			$scope.status = 'You said the information was "' + answer + '".';
+    			}, function() {
+      				$scope.status = 'You cancelled the dialog.';
+    			});
+  			};
+        function DialogController($scope, $mdDialog) {
+    		$scope.answer = function(answer) {
+      			$mdDialog.hide(answer);
+    		};
+   		}
+   	/*-------------------------------------------------------------------------------------------*/
 
       /*---------------------------------TERMINOS Y CONDICIONES----------------------------------*/
     	$scope.showAdvanced = function(ev) {
