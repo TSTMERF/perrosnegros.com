@@ -1,17 +1,23 @@
 <md-content ng-controller='meanController'>
 <head>
 </head>
-<body id="top" class="index">
+<body id="top" class="index" layout="column">
 <div id="top"></div>
-<nav layout-xs="column" layout="row" class="navbar navbar-default navbar-fixed-top">
+<nav flex layout-xs="column" layout="row" class="navbar navbar-default navbar-fixed-top" >
         <div flex class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div flex class="navbar-header">
+                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+                        <span class="sr-only">Ocultar/Desplegar Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                 <a class="navbar-brand pointer" ng-click="gotoTop()">Perros Negros</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling 
                     I just remove the collapese class in the next div to make it responsive -->
-            <div flex  class=" navbar-collapse " id="bs-example-navbar-collapse-1" >
+            <div flex  class=" navbar-collapse " id="navegacion-fm" >
                 <ul  class="nav navbar-nav navbar-right"  >
                     <li class="nav-item">
                         <a  class="pointer" ng-click="gotoAbout()" href="#">Quienes Somos</a>
@@ -19,12 +25,6 @@
                     <li class="nav-item">
                         <a  class="pointer" ng-click="gotoFacilities()" href="#">Instalaciones</a>
                     </li >
-                   <li class="nav-item">
-                        <a class="pointer" ng-click="gotoNoticePrivacy()" href="#">Aviso de Privacidad</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="pointer" ng-click="gotoGallery()" href="#">Galería</a>
-                    </li>
                     <li class="dropdown nav-item" >
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categorias<span class="caret"></span></a>
                          <ul class=" dropdown-menu" > 
@@ -45,12 +45,23 @@
                             </li>
                          </ul>
                     </li>
-                    <li>
-                        <a class="pointer" ng-click="gotoTeam()">Unete al equipo!</a>
+                    <li class="nav-item">
+                        <a class="pointer" ng-click="gotoGallery()" href="#">Galería</a>
                     </li>
-                    <li>
+                    <li class="nav-item">
+                        <a class="pointer" ng-click="gotoEvent()" href="#">Eventos</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="pointer" ng-click="gotoContact()">Contacto</a>
                     </li>
+                   <!-- <li>
+                        <a class="pointer" ng-click="gotoTeam()">Unete al equipo!</a>
+                    </li>-->
+                  
+                    <li class="nav-item">
+                        <a class="pointer" ng-click="gotoNoticePrivacy()" href="#">Aviso de Privacidad</a>
+                    </li>
+
                     <li class="dropdown nav-item">
                         <md-button class="md-icon-button md-primary  dropdown-toggle " data-toggle="dropdown">
                             <md-icon class="material-icons">account_circle</md-icon>
@@ -66,25 +77,84 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
-    </nav>
+</nav>
+<!--CAROUSEL HEADER-->
+<section>
+<header>
+<div class="intro-text" >
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+    <!-- Overlay -->
+    <div class="overlay"></div>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#bs-carousel" data-slide-to="1"></li>
+        <li data-target="#bs-carousel" data-slide-to="2"></li>
+        <li data-target="#bs-carousel" data-slide-to="3"></li>
+        <li data-target="#bs-carousel" data-slide-to="4"></li>
+        <li data-target="#bs-carousel" data-slide-to="5"></li>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-            	
-                <div class="intro-lead-in" style="width:100px; height:100px"></div>
-                <div class="intro-heading" style="width:100px; height:100px" ></div>
-                <a ng-click="gotoAbout()" class="pointer btn btn-xl">Cuéntame Más</a>
-            </div>
-            <div class="intro-lead-in">
-                    <h2>MÁS DE 40 AÑOS FORMANDO CIUDADANOS DEPORTISTAS</h2>
-                    
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item slides active">
+            <div class="slide-1"></div>
+            <div class="hero">
+                <!--<button class="btn btn-hero btn-lg"  ng-click="gotoAbout()" role="button">Cuéntame Más</button>-->
+                <button class="btn btn-hero btn-lg" role="button">See all features</button>
             </div>
         </div>
-    </header>
+        <div class="item slides">
+            <div class="center">
+                <img  src="images/header2.jpg" style="width:80%; height:100%; ">
+            </div>
+            <div class="hero">        
+                <hgroup>
+                    <h1>¡Entrenando </h1>        
+                    <h3>como los grandes!</h3>
+                </hgroup>       
+                <!--<a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>-->
+            </div>
+        </div>
+        <div class="item slides">
+            <div class="center">
+                <img  src="images/eventos/evento5.jpg" style="width:100%; height:100%; padding-top:50px; ">
+            </div>
+            <div class="hero">        
+                <!--<a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>-->
+            </div>
+        </div>
+        <div class="item slides">
+            <div class="center">
+                <img  src="images/eventos/evento1.jpg" style="width:70%; height:100%; padding-top:50px; ">
+            </div>
+            <div class="hero">        
+                <!--<a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>-->
+            </div>
+        </div>
+        <div class="item slides">
+            <div class="center">
+                <img  src="images/eventos/evento2.jpg" style="width:70%; height:100%; padding-top:50px; ">
+            </div>
+            <div class="hero">        
+                <!--<a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>-->
+            </div>
+        </div>
+        <div class="item slides">
+            <div class="center">
+                <img  src="images/eventos/evento4.jpg" style="width:90%; height:100%; padding-top:50px; ">
+            </div>
+            <div class="hero">        
+                <!--<a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>-->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</header>
+</section>
     <!-- About Section -->
-    <section id="about" ng-controller="mapController" ng-show="showAbout">
+    <section id="about" ng-controller="mapController" ng-show="showAbout" >
         <md-content  layout="column" flex>
             <div class="container">
                 <div class="row">
@@ -94,11 +164,11 @@
                             <img src="images/Slogan.png">
                         </div>
                         <h3 class="section-subheading text-muted">Dejando Huella</h3>
-                        <md-subheader><font color="#25A322" face="verdana"><strong>El concepto llamado Perros Negros.</strong></font></md-subheader>
+                        <md-subheader><font color="#25A322" face="verdana " size="6px;"><strong>El concepto de Perros Negros.</strong></font></md-subheader>
                         <div class="container">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                        <video controls class="img-responsive">
+                                        <video controls class="img-responsive"
                                             <source src="videos/El Concepto Llamado Perros Negros de Naucalpan2.mp4" type="video/mp4">
                                         </video> 
                                     </div>
@@ -109,7 +179,7 @@
                                 </div>
                         </div>
                         <br><br>
-                        <md-subheader><font color="#25A322" face="verdana"><strong>Semillero del salón de la fama del futbol americano mexicano.</strong></font></md-subheader>
+                        <md-subheader><font color="#25A322" face="verdana" size="5px;"><strong>"PERROS NEGROS" semillero del salón de la fama del futbol americano mexicano.</strong></font></md-subheader>
                         <div class="container">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -163,6 +233,188 @@
             <!--Public key for the map AIzaSyBUCear7g_4KL_KJZ-1d0a3cxntc3OcoYo-->
         </md-content>
     </section>
+     <!--Album Section-->
+    <section id="gallery" class="bg-light-gray" ng-show="showGallery">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Galería</h2>
+                    <div class="slogan">
+                        <img src="images/Slogan.png">
+                    </div>
+                    <h3 class="section-subheading text-muted">Dejando Huella</h3>
+                </div>
+            </div>
+        </div>
+        <div class="carousel slider" data-ride="carousel" id="carousel-pn">
+            <!--indicators-->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-pn" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-pn" data-slide-to="1"></li>
+                <li data-target="#carousel-pn" data-slide-to="2"></li>
+                <li data-target="#carousel-pn" data-slide-to="3"></li>
+                <li data-target="#carousel-pn" data-slide-to="4"></li>
+                <li data-target="#carousel-pn" data-slide-to="5"></li>
+                <li data-target="#carousel-pn" data-slide-to="6"></li>
+                <li data-target="#carousel-pn" data-slide-to="7"></li>
+                <li data-target="#carousel-pn" data-slide-to="8"></li>
+                <li data-target="#carousel-pn" data-slide-to="9"></li>
+                <li data-target="#carousel-pn" data-slide-to="10"></li>
+                <li data-target="#carousel-pn" data-slide-to="11"></li>
+                <li data-target="#carousel-pn" data-slide-to="12"></li>
+                <li data-target="#carousel-pn" data-slide-to="13"></li>
+
+
+            </ol>
+            <!--slides-->
+            <div class="carousel-inner">
+                <div class="item active">
+
+                    <img src="images/Áreas Ent 3.jpg" alt="..." class="img-responsive">
+                    <div class="carousel-caption">
+                        <h5>Áreas de Entrenamiento</h5>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/Entrenamiento 1.jpg" alt="..." class="img-responsive">
+                    <div class="carousel-caption">
+                        <h5>¡Equipo en Acción!</h5>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/Entrenamiento 2.jpg" alt="..." class="img-responsive">
+                    <div class="carousel-caption">
+                        <h5>¡Estando Listos!</h5>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/Entrenamiento 3.jpg" alt="..." class="img-responsive">
+                    <div class="carousel-caption">
+                        <h5>Entrenando para ser mejores cada día</h5>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/Entrenamiento 4.jpg" alt="..." class="img-responsive">
+                    <div class="carousel-caption">
+                        <h5>¡Diciplina!</h5>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/Entrenamiento 5.jpg" alt="..." class="img-responsive">
+                    <div class="carousel-caption">
+                        <h5>¡Valores!</h5>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/Gimnasio 2.jpg" alt="..." class="img-responsive">
+                    <div class="carousel-caption">
+                        <h5>Gym</h5>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/Gimnasio 6.jpg" alt="..." class="img-responsive">
+                    <div class="carousel-caption">
+                        <h5>¡Hagamos Abdomen!</h5>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/marcador.jpg" alt="..." class="img-responsive">
+                    <div class="carousel-caption">
+                        <h5>¡Contando una gran historia!</h5>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/Palcos 1.jpg" alt="..." class="img-responsive">
+                    <div class="carousel-caption">
+                        <h5>¡No nos perdamos de ningun detalle!</h5>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/Tribunas Local 1.jpg" alt="..." class="img-responsive">
+                    <div class="carousel-caption">
+                        <h5>¡Locales!</h5>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/Tribunas Visitantes 1.jpg" alt="..." class="img-responsive">
+                    <div class="carousel-caption">
+                        <h5>¡Visitantes!</h5>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/Vestidor 5.jpg" alt="..." class="img-responsive">
+                    <div class="carousel-caption">
+                        <h5>¡Creando Estratégias!</h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Controls -->
+             <a class="left carousel-control" href="#carousel-pn" data-slide="prev">
+                 <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-pn" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </section>   
+  <!-- Event section-->
+    <section id="event" ng-show="showEvent" flex>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Eventos</h2>
+                    <div class="slogan">
+                        <img src="images/Slogan.png">
+                    </div>
+                    <h3 class="section-subheading text-muted">Dejando Huella</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+        <div id="carousel-event" class="carousel slider" data-ride="carousel">
+                  <!-- Indicadores-->
+                  <ol class="carousel-indicators">
+                     <li data-target="#carousel-event" data-slide-to="0" class="active"></li>
+                      <li data-target="#carousel-event" data-slide-to="1"></li>
+                      <li data-target="#carousel-event" data-slide-to="2"></li>
+                      <li data-target="#carousel-event" data-slide-to="3"></li>
+                  </ol>
+                  <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <center>
+                          <img src="images/eventos/evento1.jpg" class="img-responsive" style="width:100%; height:100%; ">
+                        </center>
+                     </div>
+                     <div class="item">
+                        <center>
+                            <img src="images/eventos/evento2.jpg" class="img-responsive" style="width:100%; height:100%; ">
+                         </center>                  
+                    </div>
+                    <div class="item">
+                        <center>
+                            <img src="images/eventos/evento4.jpg" class="img-responsive" style="width:100%; height:100%; ">
+                         </center>                  
+                    </div>
+                     <div class="item">
+                        <center>
+                            <img src="images/eventos/evento5.jpg" class="img-responsive" style="width:100%; height:100%; ">
+                        </center>
+                    </div>
+
+                  </div>
+                  <!-- Controles--> 
+                  <a href="#carousel-event" class="left carousel-control" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                  </a>
+                  <a href="#carousel-event" class="right carousel-control" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                  </a>
+        </div>
+        </div>
+    </section>
+
     <!--Categories Section-->
     <section id="categories" ng-show="showCategories">
        <div class="container">
@@ -517,153 +769,51 @@
             </div>
         </div>
     </section>
-    <!--Gallery Section-->
-    <section id="gallery" class="bg-light-gray" ng-show="showGallery">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Galería</h2>
-                    <div class="slogan">
-                        <img src="images/Slogan.png">
-                    </div>
-                    <h3 class="section-subheading text-muted">Dejando Huella</h3>
-                </div>
-            </div>
-        </div>
-        <div class="carousel slider" data-ride="carousel" id="carousel-pn">
-            <!--indicators-->
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-pn" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-pn" data-slide-to="1"></li>
-                <li data-target="#carousel-pn" data-slide-to="2"></li>
-                <li data-target="#carousel-pn" data-slide-to="3"></li>
-                <li data-target="#carousel-pn" data-slide-to="4"></li>
-                <li data-target="#carousel-pn" data-slide-to="5"></li>
-                <li data-target="#carousel-pn" data-slide-to="6"></li>
-                <li data-target="#carousel-pn" data-slide-to="7"></li>
-                <li data-target="#carousel-pn" data-slide-to="8"></li>
-                <li data-target="#carousel-pn" data-slide-to="9"></li>
-                <li data-target="#carousel-pn" data-slide-to="10"></li>
-                <li data-target="#carousel-pn" data-slide-to="11"></li>
-                <li data-target="#carousel-pn" data-slide-to="12"></li>
-                <li data-target="#carousel-pn" data-slide-to="13"></li>
-
-            </ol>
-            <!--slides-->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="images/Áreas Ent 3.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h5>Áreas de Entrenamiento</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Entrenamiento 1.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h5>¡Equipo en Acción!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Entrenamiento 2.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h5>¡Estando Listos!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Entrenamiento 3.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h5>Entrenando para ser mejores cada día</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Entrenamiento 4.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h5>¡Diciplina!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Entrenamiento 5.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h5>¡Valores!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Gimnasio 2.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h5>Gym</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Gimnasio 6.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h5>¡Hagamos Abdomen!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/marcador.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h5>¡Contando una gran historia!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Palcos 1.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h5>¡No nos perdamos de ningun detalle!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Tribunas Local 1.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h5>¡Locales!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Tribunas Visitantes 1.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h5>¡Visitantes!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Vestidor 5.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h5>¡Creando Estratégias!</h5>
-                    </div>
-                </div>
-            </div>
-            <!-- Controls -->
-             <a class="left carousel-control" href="#carousel-pn" data-slide="prev">
-                 <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carousel-pn" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-        </div>
-    </section> 
+    
     <!-- Facilities Section -->
     <section id="facilities" class="bg-light-gray" ng-show="showFacilities">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Instalaciones</h2>
-                    <div class="slogan">
-                        <img src="images/Slogan.png">
-                    </div>
-                    <h3 class="section-subheading text-muted">Dejando Huella</h3>
-                </div>
-            </div>
-        </div>
-        <div class="container slider">
 
-            <img ng-repeat="photo in photos" class="slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index)" ng-src="{{photo.src}}" />
-            <!-- prev / next controls -->
-            <a class="arrow prev" href="#" ng-click="showPrev()"></a>
-            <a class="arrow next" href="#" ng-click="showNext()"></a>
-            <!-- extra navigation controls -->
-            <ul class="nav-gallery">
-                <li ng-repeat="photo in photos" ng-class="{'active':isActive($index)}">
-                    <img src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="showPhoto($index);" />
-                </li>
-            </ul>
+           <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="col-lg-12 text-center">
+                            <h2 class="section-heading">INSTALACIONES</h2>
+                            <div class="slogan">
+                                <img src="images/Slogan.png">
+                            </div>
+                            <h3 class="section-subheading text-muted">Dejando Huella</h3>
+                        </div>
+                    </div>
+            </div>
+
+                <div class="row">
+
+                    <div class="col-md-4 col-md-offset-1">
+                        
+                        <div role="presentation" class="dropdown bnt-group">
+                            <button class="btn btn-success dropdown-toggle btn-lg" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> GALERÍA <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li role="presentation"><a ng-click="showEntre($event)">Áreas de entrenamiento y Canchas de basket</a></li><li class="divider"></li>
+                                <li role="presentation"><a class="" ng-click="showPlay($event)">Campo de juego y Entrenamientos</a></li><li class="divider"></li>
+                                <li role="presentation"><a class="" ng-click="showOffi($event)">Auditorio, Oficina y Cafetería</a></li><li class="divider"></li>
+                                <li role="presentation"><a class="" ng-click="showSer($event)">Casilleros y Servicio Médico</a></li><li class="divider"></li>
+                                <li role="presentation"><a class="" ng-click="showGim($event)">Gimnasio y Vestidores</a></li><li class="divider"></li>
+                                <li role="presentation"><a class="" ng-click="showPal($event)">Palco de sonido, Marcador, Tribunas y Palcos</a></li><li class="divider"></li>
+                                <li role="presentation"><a class="" ng-click="showBB($event)">Edificios y Baños</a></li>
+                            </ul> 
+                        </div>
+                        
+                   </div>
+                </div>
+                <br>
+                 
+                <div class="row">
+                   
+                    <div class="col-md-12 col-lg-12">
+                       <img src="images/Instalaciones/Croquis.jpg" class="img-responsive img-rounded">
+                    </div>
+                    
+                </div>
 
         </div>
     </section> 
@@ -1404,7 +1554,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contactanos</h2>
+                    <h2 class="section-heading" style="color: white;">Contactanos</h2>
                     <div class="slogan">
                         <img src="images/Slogan.png">
                     </div>
@@ -1473,8 +1623,8 @@
                         </li>
                         <li><a href="#">Terms of Use</a>
                         </li>
-                    </ul> -->
-                </div> 
+                    </ul> 
+                </div>--> 
             </div>
         </div>
     </footer>

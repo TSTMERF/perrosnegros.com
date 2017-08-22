@@ -3,7 +3,7 @@
 	//Start login module
 	angular.module('loginModule', [])
 	//Define the login directive
-	.directive('loginDirective', function($http, $timeout, $mdToast, loginService){
+	.directive('loginDirective', function($http, $timeout, $mdToast, loginService){ 
 		/******************DIRECTIVE******************/
 		//Return the login directive
 		return {
