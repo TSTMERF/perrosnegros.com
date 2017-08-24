@@ -104,7 +104,7 @@
 					//Success callback
 					.then(function(data){
 						//Set the template
-						var template = '<personal-directive flex></personal-directive>';
+						var template = '<mean-directive flex></mean-directive>';
 						//If there's a session set the menu directive 
 						if(data.log == 1){
 							//Save the session object
@@ -122,7 +122,7 @@
 						//Clear the element
 						$element.html('');
 						//Load the template
-						$element.append($compile('<personal-directive flex></personal-directive>')($scope));
+						$element.append($compile('<mean-directive flex></mean-directive>')($scope));
 						//Reload the route
 						$route.reload();
 					});

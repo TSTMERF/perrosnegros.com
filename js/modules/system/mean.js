@@ -15,6 +15,9 @@
 	//defining controller
 	.controller('meanController', function($route,$window,$scope,$location,$anchorScroll,$http,$mdDialog, $interval){
 		
+		$scope.login = function(){
+			$location.path('/login/');	
+		}
 		//GoTo sections for page---------------------------------------------------------------
 		$scope.gotoTop = function() {
 			$scope.showTeam=false;
@@ -24,7 +27,7 @@
 			$scope.showPrivacy=false;
 			$scope.showCategories=false;
 			$scope.showGallery=false;
-                        $scope.showEvent=false;
+            $scope.showEvent=false;
 			$location.hash('top');
 			$anchorScroll();
 		};

@@ -41,7 +41,7 @@
 		//Define the routes
 		$routeProvider
 		//Dashboard's module routes
-		.when('/mean/',{
+		.when('/',{
 			template:'<mean-directive></mean-directive>'
 		})
 		.when('/dashboard/', {

@@ -67,9 +67,9 @@
                             <md-icon class="material-icons">account_circle</md-icon>
                         </md-button>
                         <ul class="nav navbar-nav dropdown-menu" > 
-                            <li><a href="login.html" ng-click="login()"><font color="orange">Iniciar Sesión</font></a></li>
+                            <li><a ng-click="login()" role="button"><font color="orange">Iniciar Sesión</font></a></li>
                             <li class="divider"></li>
-                            <li><a href="register.html" ng-click="register()"><font color="orange">Registrarse</font></a></li>
+                            <li><a ng-click="register()"><font color="orange">Registrarse</font></a></li>
                         </ul>
                     </li>
                 </ul>
@@ -93,6 +93,8 @@
         <li data-target="#bs-carousel" data-slide-to="3"></li>
         <li data-target="#bs-carousel" data-slide-to="4"></li>
         <li data-target="#bs-carousel" data-slide-to="5"></li>
+        <li data-target="#bs-carousel" data-slide-to="6"></li>
+
 
     </ol>
     <!-- Wrapper for slides -->
@@ -113,7 +115,7 @@
                     <h1>¡Entrenando </h1>        
                     <h3>como los grandes!</h3>
                 </hgroup>       
-                <!--<a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>-->
+                <a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>
             </div>
         </div>
         <div class="item slides">
@@ -121,7 +123,7 @@
                 <img  src="images/eventos/evento5.jpg" style="width:100%; height:100%; padding-top:50px; ">
             </div>
             <div class="hero">        
-                <!--<a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>-->
+                <a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>
             </div>
         </div>
         <div class="item slides">
@@ -129,7 +131,7 @@
                 <img  src="images/eventos/evento1.jpg" style="width:70%; height:100%; padding-top:50px; ">
             </div>
             <div class="hero">        
-                <!--<a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>-->
+                <a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>
             </div>
         </div>
         <div class="item slides">
@@ -137,7 +139,7 @@
                 <img  src="images/eventos/evento2.jpg" style="width:70%; height:100%; padding-top:50px; ">
             </div>
             <div class="hero">        
-                <!--<a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>-->
+                <a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>
             </div>
         </div>
         <div class="item slides">
@@ -145,7 +147,15 @@
                 <img  src="images/eventos/evento4.jpg" style="width:90%; height:100%; padding-top:50px; ">
             </div>
             <div class="hero">        
-                <!--<a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>-->
+                <a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>
+            </div>
+        </div>
+        <div class="item slides">
+            <div class="center">
+                <img  src="images/eventos/evento3.jpg" style="width:90%; height:100%; padding-top:50px; ">
+            </div>
+            <div class="hero">        
+                <a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>
             </div>
         </div>
     </div>
@@ -195,7 +205,7 @@
                         </div>
                         <br><br><br>
                         <md-list ng-controller="aboutController as ctrl" ng-cloak>
-                            <md-subheader><font color="orange">Más acerca de nosotros</font></md-subheader>
+                            <md-subheader><font color="orange"><h4>Más acerca de nosotros</h4></font></md-subheader>
                             <md-list-item  class="secondary-button-padding" ng-click="ctrl.missionAction($event)">
                                 <p>Misión</p>
                                 <md-button class="md-primary" ng-click="ctrl.missionAction($event)">Más Información</md-button>
@@ -211,7 +221,13 @@
                                 <md-button class="md-primary" ng-click="ctrl.valuesAction($event)">Más Información</md-button>
                             </md-list-item>
                             <md-divider></md-divider>
-                            <md-subheader><font color="orange">Nuestra Dirección</font></md-subheader>
+                            <md-subheader><font color="orange"><h4>Directiva</h4></font></md-subheader>
+                            <md-list-item  class="secondary-button-padding" ng-click="directiveAction($event)">
+                                <p>Los Jefes</p>
+                                <md-button class="md-primary" ng-click="directiveAction($event)">Mostrara Más</md-button>
+                            </md-list-item>
+                            <md-divider></md-divider>
+                            <md-subheader><font color="orange"><h4>Nuestra Dirección</h4></font></md-subheader>
                             <md-list-item  class="secondary-button-padding">
                                 <p>Perros Negros de Naucalpan.</p>
                             </md-list-item>
@@ -223,7 +239,7 @@
                             </md-list-item>
                             <md-divider></md-divider>
                         </md-list>
-                        <md-subheader><font color="orange">Mapa</font></md-subheader>
+                        <md-subheader><font color="orange"><h4>Mapa</h4></font></md-subheader>
                             <div id="map" style="height: 600px;"></div>    
                     </div>
                     &nbsp;<br>&nbsp;
@@ -378,6 +394,7 @@
                       <li data-target="#carousel-event" data-slide-to="1"></li>
                       <li data-target="#carousel-event" data-slide-to="2"></li>
                       <li data-target="#carousel-event" data-slide-to="3"></li>
+                      <li data-target="#carousel-event" data-slide-to="4"></li>
                   </ol>
                   <div class="carousel-inner" role="listbox">
                     <div class="item active">
@@ -400,7 +417,11 @@
                             <img src="images/eventos/evento5.jpg" class="img-responsive" style="width:100%; height:100%; ">
                         </center>
                     </div>
-
+                     <div class="item">
+                        <center>
+                            <img src="images/eventos/evento3.jpg" class="img-responsive" style="width:100%; height:100%; ">
+                        </center>
+                    </div>
                   </div>
                   <!-- Controles--> 
                   <a href="#carousel-event" class="left carousel-control" role="button" data-slide="prev">
@@ -1572,6 +1593,10 @@
                                 </div>
                                 <div class="form-group">
                                     <input ng-model="input.email" type="email" class="form-control" placeholder="Email *" id="email" name="email" required>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input ng-model="input.subject" type="text" class="form-control" placeholder="Asunto *" id="subject" name="subject" required>
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
