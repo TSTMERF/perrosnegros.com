@@ -46,7 +46,7 @@
                          </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="pointer" ng-click="gotoGallery()" href="#">Galería</a>
+                        <a class="pointer" ng-click="gotoGallery()" href="#">Album</a>
                     </li>
                     <li class="nav-item">
                         <a class="pointer" ng-click="gotoEvent()" href="#">Eventos</a>
@@ -79,8 +79,8 @@
         <!-- /.container-fluid -->
 </nav>
 <!--CAROUSEL HEADER-->
-<section>
 <header>
+<section ng-show="showHeader" >
 <div class="intro-text" >
 <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
     <!-- Overlay -->
@@ -94,8 +94,6 @@
         <li data-target="#bs-carousel" data-slide-to="4"></li>
         <li data-target="#bs-carousel" data-slide-to="5"></li>
         <li data-target="#bs-carousel" data-slide-to="6"></li>
-
-
     </ol>
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
@@ -161,7 +159,6 @@
     </div>
 </div>
 </div>
-</header>
 </section>
     <!-- About Section -->
     <section id="about" ng-controller="mapController" ng-show="showAbout" >
@@ -223,7 +220,7 @@
                             <md-divider></md-divider>
                             <md-subheader><font color="orange"><h4>Directiva</h4></font></md-subheader>
                             <md-list-item  class="secondary-button-padding" ng-click="directiveAction($event)">
-                                <p>Los Jefes</p>
+                                <p>Directivo</p>
                                 <md-button class="md-primary" ng-click="directiveAction($event)">Mostrara Más</md-button>
                             </md-list-item>
                             <md-divider></md-divider>

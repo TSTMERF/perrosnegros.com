@@ -14,12 +14,15 @@
 	})
 	//defining controller
 	.controller('meanController', function($route,$window,$scope,$location,$anchorScroll,$http,$mdDialog, $interval){
-		
+		//Muestra Header
+		$scope.showHeader=true;
+		//definiendo liga de login
 		$scope.login = function(){
 			$location.path('/login/');	
 		}
 		//GoTo sections for page---------------------------------------------------------------
 		$scope.gotoTop = function() {
+			$scope.showHeader=true;
 			$scope.showTeam=false;
 			$scope.showContact=false;
 			$scope.showAbout=false;
@@ -34,6 +37,7 @@
 
 		$scope.showAbout=false;
 		$scope.gotoAbout = function() {
+			$scope.showHeader=false;
 			$scope.showTeam=false;
 			$scope.showContact=false;
 			$scope.showFacilities=false;
@@ -48,6 +52,7 @@
 		$scope.showGallery=false;
 		$scope.gotoGallery = function() {
 			$scope.showTeam=false;
+			$scope.showHeader=false;
 			$scope.showContact=false;
 			$scope.showFacilities=false;
 			$scope.showPrivacy=false;
@@ -61,6 +66,7 @@
                $scope.showEvent=false;
 		$scope.gotoEvent = function() {
 			$scope.showAbout=false;
+			$scope.showHeader=false;
 			$scope.showCategories=false;
 			$scope.showTeam=false;
 			$scope.showFacilities=false;
@@ -75,25 +81,27 @@
 		$scope.showFacilities=false;
 		$scope.gotoFacilities = function() {
 			$scope.showAbout=false;
+			$scope.showHeader=false;
 			$scope.showContact=false;
 			$scope.showPrivacy=false;
 			$scope.showCategories=false;
 			$scope.showTeam=false;
 			$scope.showGallery=false;
-                        $scope.showEvent=false;
+            $scope.showEvent=false;
 			$scope.showFacilities=true;
 			$location.hash('facilities');
 			$anchorScroll();
 		};
 		$scope.showPrivacy=false;
 		$scope.gotoNoticePrivacy = function() {
+			$scope.showHeader=false;
 			$scope.showAbout=false;
 			$scope.showContact=false;
 			$scope.showCategories=false;
 			$scope.showTeam=false;
 			$scope.showFacilities=false;
 			$scope.showGallery=false;
-                        $scope.showEvent=false;
+			$scope.showEvent=false;
 			$scope.showPrivacy=true;
 			$location.hash('noticeprivacy');
 			$anchorScroll();
@@ -101,26 +109,28 @@
 
 		$scope.showTeam=false;
 		$scope.gotoTeam = function() {
+			$scope.showHeader=false;
 			$scope.showAbout=false;
 			$scope.showContact=false;
 			$scope.showCategories=false;
 			$scope.showFacilities=false;
 			$scope.showPrivacy=false;
 			$scope.showGallery=false;
-                        $scope.showEvent=false;
+			$scope.showEvent=false;
 			$scope.showTeam=true;
 			$location.hash('team');
 			$anchorScroll();
 		};
 		$scope.showContact=false;
 		$scope.gotoContact = function() {
+			$scope.showHeader=false;
 			$scope.showAbout=false;
 			$scope.showCategories=false;
 			$scope.showTeam=false;
 			$scope.showFacilities=false;
 			$scope.showPrivacy=false;
 			$scope.showGallery=false;
-                        $scope.showEvent=false;
+			$scope.showEvent=false;
 			$scope.showContact=true;
 			$location.hash('contact');
 			$anchorScroll();
@@ -128,18 +138,19 @@
 		
 		$scope.showCategories=false;
 		$scope.gotoCategory=function(){
+			$scope.showHeader=false;
 			$scope.showAbout=false;
 			$scope.showContact=false;
 			$scope.showTeam=false;
 			$scope.showFacilities=false;
 			$scope.showPrivacy=false;
 			$scope.showGallery=false;
-                        $scope.showEvent=false;
+            $scope.showEvent=false;
 			$scope.showCategories=true;
 			$location.hash('categories');
 			$anchorScroll();
 		}
-		/********************Menu Inside Categories****************************/
+		/********************Submenu Inside Categories****************************/
 
 		/*BABY*/
 		$scope.gotoArdillas=function(){
