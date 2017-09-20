@@ -25,7 +25,7 @@
 			$location.path("/training");
 		}
 		/*$scope.go=function(){
-			
+			$location.href="#/parents/";
 		}*/
 		//define the insurance select
 		$scope.insurances=[

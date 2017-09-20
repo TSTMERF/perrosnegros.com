@@ -3,7 +3,7 @@
 	//Start login module
 	angular.module('loginModule', [])
 	//Define the login directive
-	.directive('loginDirective', function($http, $timeout, $mdToast, loginService){ 
+	.directive('loginDirective', function($http, $timeout, $mdToast, loginService){
 		/******************DIRECTIVE******************/
 		//Return the login directive
 		return {
@@ -38,7 +38,7 @@
 				}
 			}
 		};
-	})	
+	})
 	//Define the loading directive
 	.directive('loadingDirective', function($http, $compile, $route, $templateCache, loginService){
 		/******************LOCAL VARIABLES******************/
@@ -49,14 +49,13 @@
 		function loadTemplates(rest, callback, total){
 			//Validate the size
 			if(rest.length){
-				console.log("rest"+rest);
 				//Increase the progress in one
 				progress.progress += 1;
 				//Calculate the percent
 				progress.percent = (100*(progress.progress/total)).toFixed(0);
 				//Get the last template
 				var template = rest.pop();
-				//Get the first 
+				//Get the first
 				$http.get(template)
 				//Get the template code
 				.success(function(content){
@@ -85,47 +84,51 @@
 					'html/system/login.html',
 					'html/system/dashboard.html',
 					'html/system/error.html',
-					'html/system/mean.html',
 					'html/system/menu.html',
 					'html/system/home.html',
+					'html/system/about.html',
+					'html/system/event.html',
+					'html/system/privacy.html',
+					'html/system/contact.html',
+					'html/system/category.html',
+					'html/system/EstamosTrabajando.html',
+					'html/system/instrucciones.html',
+					'html/system/TerminosCondiciones.html',
+                    'html/system/Instalaciones/Entrenamiento.html',
+					'html/system/Instalaciones/PastoS.html',
+					'html/system/Instalaciones/PastoS.html',
+					'html/system/Instalaciones/TribunaL.html',
+					'html/system/Instalaciones/TribunaV.html',
+					'html/system/Instalaciones/PalcosS.html',
+					'html/system/Instalaciones/BanosTL.html',
+					'html/system/Instalaciones/MarcadorE.html',
+					'html/system/Instalaciones/Casilleros.html',
+					'html/system/Instalaciones/MedicalService.html',
+					'html/system/Instalaciones/Gimnasio.html',
+					'html/system/Instalaciones/Palcos.html',
+					'html/system/Instalaciones/Buildings.html',
+					'html/system/Instalaciones/Auditorio.html',
+					'html/system/Instalaciones/Cafeteria.html',
+					'html/system/Instalaciones/Boutique.html',
+					'html/system/Instalaciones/AreaAdm.html',
+					'html/system/Instalaciones/EFYJ.html',
+					'html/system/Instalaciones/CanchaB.html',
+					'html/system/Instalaciones/BanosV.html',
+					'html/system/Instalaciones/Vestidores.html',
 					'html/users/inf_personal.html',
 					'html/users/inf_training.html',
 					'html/users/medico.html',
-					'html/users/parents.html',
-					'html/users/pagos.html',
-					'html/system/instrucciones.html',
-					'html/system/TerminosCondiciones.html'
-
+					'html/users/parents.html'
+					//'html/system/Jugadores/perfil.html'
 				];
-				//Get all the files to the templateCache
+						//Get all the files to the templateCache
 				loadTemplates(templates, function(){
-					//Check session
-					loginService.checkLogin()
-					//Success callback
-					.then(function(data){
-						//Set the template
-						var template = '<mean-directive flex></mean-directive>';
-						//If there's a session set the menu directive 
-						if(data.log == 1){
-							//Save the session object
-							$scope.session = data;
-							//Set the menu
-							template = '<menu-directive flex layout="row"></menu-directive>';
-						}
-						//Clear the element
-						$element.html('');
-						//Load the template
-						$element.append($compile(template)($scope));
-						//Reload the route
-						$route.reload();
-					},function(){
-						//Clear the element
-						$element.html('');
-						//Load the template
-						$element.append($compile('<mean-directive flex></mean-directive>')($scope));
-						//Reload the route
-						$route.reload();
-					});
+					//Clear the element
+					$element.html('');
+					//Load the template
+					$element.append($compile('<body-directive flex></body-directive>')($scope));
+					//Reload the route
+					$route.reload();
 					//End
 				}, templates.length);
 			},
@@ -135,11 +138,12 @@
 			}
 		};
 	})
+
 	//Define the login service
 	.service('loginService', function($q, $http, $filter){
 		/******************PROMISES******************/
 		//Define an empty permissions object
-		var permissions = {};		
+		var permissions = {};
 		/******************METHODS******************/
 		//Call the server for the login status
 		function checkLogin(){
@@ -149,7 +153,7 @@
 			$http.post('php/api.php?command=checkLogin',{})
 			//Success the checkLogin
 			.success(function(response){
-				
+
 				//Validate response
 				if(response.status == 1){
 					//Define the resolve function
@@ -163,13 +167,13 @@
 			//Return the deferred promise
 			return deferred.promise;
 		}
-		//Get all the roles 
+		//Get all the roles
 //		function getRoles(){
 			//Define the $q defer
 		/*	var deferred = $q.defer();
 			//Get the roles from the server
 			$http.post('php/api.php?command=getAllRoles', {})
-			//Success from getting roles 
+			//Success from getting roles
 			.success(function(response){
 				//Validate response
 				if(response.status == 1){
@@ -196,7 +200,7 @@
 			var deferred = $q.defer();
 			//Get the roles from the server
 			$http.post('php/api.php?command=doLogin', {user:user, password:password})
-			//Success from getting roles 
+			//Success from getting roles
 			.success(function(response){
 				//console.log(response);
 				//Validate response
@@ -218,7 +222,7 @@
 			var deferred = $q.defer();
 			//Get the roles from the server
 			$http.post('php/api.php?command=doLogout')
-			//Success from getting roles 
+			//Success from getting roles
 			.success(function(response){
 				//Validate response
 				if(response.status == 1){
@@ -233,7 +237,7 @@
 			//Return the deferred promise
 			return deferred.promise;
 		}
-		
+
 		/******************INTERFACE******************/
 		//Return the service's interface
 		return {
@@ -251,5 +255,5 @@
 			}
 		};
 	});
-	//End	
+	//End
 })();

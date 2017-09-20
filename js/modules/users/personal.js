@@ -8,7 +8,7 @@
 		return{
 			restrict:'E',
 			replace:true,
-			templateUrl:'html/system/personal.html',
+			templateUrl:'html/system/home.html',
 			controller: 'userPersonalController'
 		};
 	})

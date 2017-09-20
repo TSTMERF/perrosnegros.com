@@ -8,7 +8,7 @@
 		return{
 			restrict:'E',
 			replace:true,
-			templateUrl:'html/system/home.html',
+			templateUrl:'html/system/EstamosTrabajando.html',
 			controller: 'categoryController'
 		};
 	})
@@ -37,7 +37,55 @@
       }).join(seperator);
       };
     })*/
-  	.controller('categoryController', function DemoCtrl($mdDialog) {
+  	.controller('categoryController', function DemoCtrl($mdDialog, $scope, $location) {
+      /********************Submenu Inside Categories****************************/
+
+    /*BABY*/
+    $scope.gotoArdillas=function(){
+      $location.path('/Ardillas/');
+    }
+    $scope.gotoCastores=function(){
+      $location.path('/Castores/'); 
+    }
+    $scope.gotoZorros=function(){
+      $location.path('/Zorros/');
+    }
+    /*CHILDISH*/
+    $scope.gotoRabbits=function(){
+      $location.path('/Rabbits/');
+    }
+    $scope.gotoHornets=function(){
+      $location.path('/Hornets/');
+    }
+    $scope.gotoIrons=function(){
+      $location.path('/Irons/');
+    }
+    $scope.gotoFalcons=function(){
+      $location.path('/Falcons/');
+    }
+    $scope.gotoTauros=function(){
+      $location.path('/Tauros/');
+    }
+    $scope.gotoPonys=function(){
+      $location.path('/Ponys/');
+    }
+    /*YOUTH*/
+    $scope.gotoSpringY=function(){
+     $location.path('/Varonil_Primavera/');
+    }
+    $scope.gotoAutumnY=function(){
+      $location.path('/Varonil_Otoño/');
+    }
+    /*FEMALE*/
+    $scope.gotoSpringF=function(){
+      $location.path('/Femenil_Kid/');
+    }
+    $scope.gotoAutumnF=function(){
+      $location.path('/Femenil_Rockies/');
+    }
+    $scope.gotoSpringF2=function(){
+      $location.path('/Femenil_Juvenil/');
+    }
     this.settings = {
       printLayout: true,
       showRuler: true,

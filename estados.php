@@ -1,14 +1,14 @@
 <?php
-	$servername = "localhost:3306";
-	$username = "root";
-	$password = "Petunia21";
+	$servername = "50.62.209.75";
+	$username = "PN2";
+	$password = "P_NegrosN.1_";
 	$dbname = "mexico";
 
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 	if(!$conn){
 		die("Connection failed: " .mysqli_connect_error());
 	}
-
+       mysqli_set_charset($conn, 'utf8');
 
 	$Estado 	= $_POST['Estado'];
 	$Municipio 	= $_POST['Municipio'];

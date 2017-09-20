@@ -1,1654 +1,185 @@
-<md-content ng-controller='meanController'>
-<head>
-</head>
-<body id="top" class="index" layout="column">
-<div id="top"></div>
-<nav flex layout-xs="column" layout="row" class="navbar navbar-default navbar-fixed-top" >
-        <div flex class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div flex class="navbar-header">
-                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
-                        <span class="sr-only">Ocultar/Desplegar Menu</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                <a class="navbar-brand pointer" ng-click="gotoTop()">Perros Negros</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling 
-                    I just remove the collapese class in the next div to make it responsive -->
-            <div flex  class=" navbar-collapse " id="navegacion-fm" >
-                <ul  class="nav navbar-nav navbar-right"  >
-                    <li class="nav-item">
-                        <a  class="pointer" ng-click="gotoAbout()" href="#">Quienes Somos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a  class="pointer" ng-click="gotoFacilities()" href="#">Instalaciones</a>
-                    </li >
-                    <li class="dropdown nav-item" >
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categorias<span class="caret"></span></a>
-                         <ul class=" dropdown-menu" > 
-                            <li class="dropdown-submenu">
-                                <md-button ng-click="gotoCategory()">Baby</md-button>             
-                            </li>
-                            <li class="divider"></li>
-                            <li class="dropdown-submenu">
-                                <md-button  ng-click="gotoCategory()">Infantil</md-button>                           
-                            </li>
-                            <li class="divider"></li>
-                            <li class="dropdown-submenu">
-                                <md-button ng-click="gotoCategory()">Juvenil</md-button>                           
-                            </li>
-                            <li class="divider"></li>
-                            <li class="dropdown-submenu">
-                                <md-button ng-click="gotoCategory()">Femenil</md-button>                           
-                            </li>
-                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="pointer" ng-click="gotoGallery()" href="#">Album</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="pointer" ng-click="gotoEvent()" href="#">Eventos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="pointer" ng-click="gotoContact()">Contacto</a>
-                    </li>
-                   <!-- <li>
-                        <a class="pointer" ng-click="gotoTeam()">Unete al equipo!</a>
-                    </li>-->
-                  
-                    <li class="nav-item">
-                        <a class="pointer" ng-click="gotoNoticePrivacy()" href="#">Aviso de Privacidad</a>
-                    </li>
-
-                    <li class="dropdown nav-item">
-                        <md-button class="md-icon-button md-primary  dropdown-toggle " data-toggle="dropdown">
-                            <md-icon class="material-icons">account_circle</md-icon>
-                        </md-button>
-                        <ul class="nav navbar-nav dropdown-menu" > 
-                            <li><a ng-click="login()" role="button"><font color="orange">Iniciar Sesión</font></a></li>
-                            <li class="divider"></li>
-                            <li><a ng-click="register()"><font color="orange">Registrarse</font></a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-</nav>
-<!--CAROUSEL HEADER-->
-<header>
-<section ng-show="showHeader" >
-<div class="intro-text" >
-<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
-    <!-- Overlay -->
-    <div class="overlay"></div>
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-        <li data-target="#bs-carousel" data-slide-to="1"></li>
-        <li data-target="#bs-carousel" data-slide-to="2"></li>
-        <li data-target="#bs-carousel" data-slide-to="3"></li>
-        <li data-target="#bs-carousel" data-slide-to="4"></li>
-        <li data-target="#bs-carousel" data-slide-to="5"></li>
-        <li data-target="#bs-carousel" data-slide-to="6"></li>
-    </ol>
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-        <div class="item slides active">
-            <div class="slide-1"></div>
-            <div class="hero">
-                <!--<button class="btn btn-hero btn-lg"  ng-click="gotoAbout()" role="button">Cuéntame Más</button>-->
-                <button class="btn btn-hero btn-lg" role="button">See all features</button>
-            </div>
-        </div>
-        <div class="item slides">
-            <div class="center">
-                <img  src="images/header2.jpg" style="width:80%; height:100%; ">
-            </div>
-            <div class="hero">        
-                <hgroup>
-                    <h1>¡Entrenando </h1>        
-                    <h3>como los grandes!</h3>
-                </hgroup>       
-                <a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>
-            </div>
-        </div>
-        <div class="item slides">
-            <div class="center">
-                <img  src="images/eventos/evento5.jpg" style="width:100%; height:100%; padding-top:50px; ">
-            </div>
-            <div class="hero">        
-                <a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>
-            </div>
-        </div>
-        <div class="item slides">
-            <div class="center">
-                <img  src="images/eventos/evento1.jpg" style="width:70%; height:100%; padding-top:50px; ">
-            </div>
-            <div class="hero">        
-                <a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>
-            </div>
-        </div>
-        <div class="item slides">
-            <div class="center">
-                <img  src="images/eventos/evento2.jpg" style="width:70%; height:100%; padding-top:50px; ">
-            </div>
-            <div class="hero">        
-                <a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>
-            </div>
-        </div>
-        <div class="item slides">
-            <div class="center">
-                <img  src="images/eventos/evento4.jpg" style="width:90%; height:100%; padding-top:50px; ">
-            </div>
-            <div class="hero">        
-                <a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>
-            </div>
-        </div>
-        <div class="item slides">
-            <div class="center">
-                <img  src="images/eventos/evento3.jpg" style="width:90%; height:100%; padding-top:50px; ">
-            </div>
-            <div class="hero">        
-                <a class="btn btn-hero btn-lg" ng-click="gotoAbout()">Cuéntame Más</a>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</section>
-    <!-- About Section -->
-    <section id="about" ng-controller="mapController" ng-show="showAbout" >
-        <md-content  layout="column" flex>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Quienes somos</h2>
-                        <div class="slogan">
-                            <img src="images/Slogan.png">
-                        </div>
-                        <h3 class="section-subheading text-muted">Dejando Huella</h3>
-                        <md-subheader><font color="#25A322" face="verdana " size="6px;"><strong>El concepto de Perros Negros.</strong></font></md-subheader>
-                        <div class="container">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                        <video controls class="img-responsive"
-                                            <source src="videos/El Concepto Llamado Perros Negros de Naucalpan2.mp4" type="video/mp4">
-                                        </video> 
-                                    </div>
-                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                         <h6>Perros Negros</h6>
-                                         <p></p>
-                                    </div>
-                                </div>
-                        </div>
-                        <br><br>
-                        <md-subheader><font color="#25A322" face="verdana" size="5px;"><strong>"PERROS NEGROS" semillero del salón de la fama del futbol americano mexicano.</strong></font></md-subheader>
-                        <div class="container">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                        <video controls class="img-responsive">
-                                            <source src="videos/Perros Negros, semillero del Salón de la Fama del futbol americano mexicano.mp4" type="video/mp4">
-                                        </video> 
-                                    </div>
-                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                         <h6>Semillero de futbol americano mexicano</h6>
-                                         <p></p>
-                                    </div>
-                                </div>
-                        </div>
-                        <br><br><br>
-                        <md-list ng-controller="aboutController as ctrl" ng-cloak>
-                            <md-subheader><font color="orange"><h4>Más acerca de nosotros</h4></font></md-subheader>
-                            <md-list-item  class="secondary-button-padding" ng-click="ctrl.missionAction($event)">
-                                <p>Misión</p>
-                                <md-button class="md-primary" ng-click="ctrl.missionAction($event)">Más Información</md-button>
-                            </md-list-item>
-                            <md-divider></md-divider>
-                            <md-list-item  class="secondary-button-padding" ng-click="ctrl.vissionAction($event)">
-                                <p>Visión</p>
-                                <md-button class="md-primary" ng-click="ctrl.vissionAction($event)">Más Información</md-button>
-                            </md-list-item>
-                            <md-divider></md-divider>
-                            <md-list-item  class="secondary-button-padding" ng-click="ctrl.valuesAction($event)">
-                                <p>Valores</p>
-                                <md-button class="md-primary" ng-click="ctrl.valuesAction($event)">Más Información</md-button>
-                            </md-list-item>
-                            <md-divider></md-divider>
-                            <md-subheader><font color="orange"><h4>Directiva</h4></font></md-subheader>
-                            <md-list-item  class="secondary-button-padding" ng-click="directiveAction($event)">
-                                <p>Directivo</p>
-                                <md-button class="md-primary" ng-click="directiveAction($event)">Mostrara Más</md-button>
-                            </md-list-item>
-                            <md-divider></md-divider>
-                            <md-subheader><font color="orange"><h4>Nuestra Dirección</h4></font></md-subheader>
-                            <md-list-item  class="secondary-button-padding">
-                                <p>Perros Negros de Naucalpan.</p>
-                            </md-list-item>
-                            <md-list-item>
-                                <p>Nos ubicamos en Baden Powell s/n, Santa Cruz Acatlán, 53150 Naucalpan de Juárez, Mexico.</p>
-                            </md-list-item>
-                            <md-list-item>
-                                <p>Cerca de la Plaza Naucalli</p>
-                            </md-list-item>
-                            <md-divider></md-divider>
-                        </md-list>
-                        <md-subheader><font color="orange"><h4>Mapa</h4></font></md-subheader>
-                            <div id="map" style="height: 600px;"></div>    
-                    </div>
-                    &nbsp;<br>&nbsp;
-                    <h5>Si necesitas mayor información puedes <a ng-click="gotoContact()">contactarnos</a> con un mail. O bien buscanos en nuestras redes sociales como <a href="https://www.facebook.com/perrosnegros.naucalpan.1/?fref=ts">facebook</a>.</h5>
+<md-content ng-controller="meanController" layout="column" layout-xs="column" >
+<body id="top" class="index container" flex>
+    <nav flex layout-xs="column" layout="row" class="navbar navbar-default navbar-fixed-top" >
+            <div flex class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div flex class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+                            <span class="sr-only">Ocultar/Desplegar Menu</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    <a class="navbar-brand pointer" ng-click="gotoTop()">Perros Negros</a>
                 </div>
-            </div>
-            <!--Public key for the map AIzaSyBUCear7g_4KL_KJZ-1d0a3cxntc3OcoYo-->
-        </md-content>
-    </section>
-     <!--Album Section-->
-    <section id="gallery" class="bg-light-gray" ng-show="showGallery">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Galería</h2>
-                    <div class="slogan">
-                        <img src="images/Slogan.png">
-                    </div>
-                    <h3 class="section-subheading text-muted">Dejando Huella</h3>
-                </div>
-            </div>
-        </div>
-        <div class="carousel slider" data-ride="carousel" id="carousel-pn">
-            <!--indicators-->
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-pn" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-pn" data-slide-to="1"></li>
-                <li data-target="#carousel-pn" data-slide-to="2"></li>
-                <li data-target="#carousel-pn" data-slide-to="3"></li>
-                <li data-target="#carousel-pn" data-slide-to="4"></li>
-                <li data-target="#carousel-pn" data-slide-to="5"></li>
-                <li data-target="#carousel-pn" data-slide-to="6"></li>
-                <li data-target="#carousel-pn" data-slide-to="7"></li>
-                <li data-target="#carousel-pn" data-slide-to="8"></li>
-                <li data-target="#carousel-pn" data-slide-to="9"></li>
-                <li data-target="#carousel-pn" data-slide-to="10"></li>
-                <li data-target="#carousel-pn" data-slide-to="11"></li>
-                <li data-target="#carousel-pn" data-slide-to="12"></li>
-                <li data-target="#carousel-pn" data-slide-to="13"></li>
-
-
-            </ol>
-            <!--slides-->
-            <div class="carousel-inner">
-                <div class="item active">
-
-                    <img src="images/Áreas Ent 3.jpg" alt="..." class="img-responsive">
-                    <div class="carousel-caption">
-                        <h5>Áreas de Entrenamiento</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Entrenamiento 1.jpg" alt="..." class="img-responsive">
-                    <div class="carousel-caption">
-                        <h5>¡Equipo en Acción!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Entrenamiento 2.jpg" alt="..." class="img-responsive">
-                    <div class="carousel-caption">
-                        <h5>¡Estando Listos!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Entrenamiento 3.jpg" alt="..." class="img-responsive">
-                    <div class="carousel-caption">
-                        <h5>Entrenando para ser mejores cada día</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Entrenamiento 4.jpg" alt="..." class="img-responsive">
-                    <div class="carousel-caption">
-                        <h5>¡Diciplina!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Entrenamiento 5.jpg" alt="..." class="img-responsive">
-                    <div class="carousel-caption">
-                        <h5>¡Valores!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Gimnasio 2.jpg" alt="..." class="img-responsive">
-                    <div class="carousel-caption">
-                        <h5>Gym</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Gimnasio 6.jpg" alt="..." class="img-responsive">
-                    <div class="carousel-caption">
-                        <h5>¡Hagamos Abdomen!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/marcador.jpg" alt="..." class="img-responsive">
-                    <div class="carousel-caption">
-                        <h5>¡Contando una gran historia!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Palcos 1.jpg" alt="..." class="img-responsive">
-                    <div class="carousel-caption">
-                        <h5>¡No nos perdamos de ningun detalle!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Tribunas Local 1.jpg" alt="..." class="img-responsive">
-                    <div class="carousel-caption">
-                        <h5>¡Locales!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Tribunas Visitantes 1.jpg" alt="..." class="img-responsive">
-                    <div class="carousel-caption">
-                        <h5>¡Visitantes!</h5>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/Vestidor 5.jpg" alt="..." class="img-responsive">
-                    <div class="carousel-caption">
-                        <h5>¡Creando Estratégias!</h5>
-                    </div>
-                </div>
-            </div>
-            <!-- Controls -->
-             <a class="left carousel-control" href="#carousel-pn" data-slide="prev">
-                 <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carousel-pn" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-        </div>
-    </section>   
-  <!-- Event section-->
-    <section id="event" ng-show="showEvent" flex>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Eventos</h2>
-                    <div class="slogan">
-                        <img src="images/Slogan.png">
-                    </div>
-                    <h3 class="section-subheading text-muted">Dejando Huella</h3>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-        <div id="carousel-event" class="carousel slider" data-ride="carousel">
-                  <!-- Indicadores-->
-                  <ol class="carousel-indicators">
-                     <li data-target="#carousel-event" data-slide-to="0" class="active"></li>
-                      <li data-target="#carousel-event" data-slide-to="1"></li>
-                      <li data-target="#carousel-event" data-slide-to="2"></li>
-                      <li data-target="#carousel-event" data-slide-to="3"></li>
-                      <li data-target="#carousel-event" data-slide-to="4"></li>
-                  </ol>
-                  <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <center>
-                          <img src="images/eventos/evento1.jpg" class="img-responsive" style="width:100%; height:100%; ">
-                        </center>
-                     </div>
-                     <div class="item">
-                        <center>
-                            <img src="images/eventos/evento2.jpg" class="img-responsive" style="width:100%; height:100%; ">
-                         </center>                  
-                    </div>
-                    <div class="item">
-                        <center>
-                            <img src="images/eventos/evento4.jpg" class="img-responsive" style="width:100%; height:100%; ">
-                         </center>                  
-                    </div>
-                     <div class="item">
-                        <center>
-                            <img src="images/eventos/evento5.jpg" class="img-responsive" style="width:100%; height:100%; ">
-                        </center>
-                    </div>
-                     <div class="item">
-                        <center>
-                            <img src="images/eventos/evento3.jpg" class="img-responsive" style="width:100%; height:100%; ">
-                        </center>
-                    </div>
-                  </div>
-                  <!-- Controles--> 
-                  <a href="#carousel-event" class="left carousel-control" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Anterior</span>
-                  </a>
-                  <a href="#carousel-event" class="right carousel-control" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Siguiente</span>
-                  </a>
-        </div>
-        </div>
-    </section>
-
-    <!--Categories Section-->
-    <section id="categories" ng-show="showCategories">
-       <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Categorias</h2>
-                    <div class="slogan">
-                        <img src="images/Slogan.png">
-                    </div>
-                    <h3 class="section-subheading text-muted">Dejando Huella</h3>
-                </div>
-            </div>
-            <div ng-controller="categoryController as ctrl" ng-cloak>
-                <!--menu bar-->
-                <md-toolbar class="md-menu-toolbar">
-                    <div layout="row">
-                        <md-toolbar-filler layout layout-align="center center">
-                             <img src="images/perro1.png">
-                        </md-toolbar-filler>
-                    <div>
-                        <h2 class="md-toolbar-tools">Categorias</h2>
-                        <md-menu-bar>
-                            <md-menu>
-                                <md-button ng-click="$mdMenu.open()" ><a href="#baby">Baby</a></md-button>
-                                <md-menu-content>
-                                    <md-menu-item><md-button ng-click="gotoArdillas()"><a href="#ardillas">Ardillas</a></md-button></md-menu-item>
-                                    <md-menu-divider></md-menu-divider>
-                                    <md-menu-item><md-button ng-click="gotoCastores()"><a href="#castores">Castores</a></md-button></md-menu-item>
-                                    <md-menu-divider></md-menu-divider>
-                                    <md-menu-item><md-button ng-click="gotoZorros()"><a href="#zorros">Zorros</a></md-button></md-menu-item>
-                                </md-menu-content>
-                            </md-menu>
-                            <md-menu>
-                                <md-button ng-click="$mdMenu.open()" ><a href="#childish">Infantil</a></md-button>
-                                <md-menu-content>
-                                    <md-menu-item><md-button ng-click="gotoRabbits()"><a href="#rabbits">Rabbits</a></md-button></md-menu-item>
-                                    <md-menu-divider></md-menu-divider>
-                                    <md-menu-item><md-button ng-click="gotoHornets()"><a href="#hornets">Hornets</a></md-button></md-menu-item>
-                                    <md-menu-divider></md-menu-divider>
-                                    <md-menu-item><md-button ng-click="gotoIrons()"><a href="#irons">Irons</a></md-button></md-menu-item>
-                                    <md-menu-divider></md-menu-divider>
-                                    <md-menu-item><md-button ng-click="gotoFalcons()"><a href="#falcons">Falcons</a></md-button></md-menu-item>
-                                    <md-menu-divider></md-menu-divider>
-                                    <md-menu-item><md-button ng-click="gotoTauros()"><a href="#tauros">Tauros</a></md-button></md-menu-item>
-                                    <md-menu-divider></md-menu-divider>
-                                    <md-menu-item><md-button ng-click="gotoPonys()"><a href="#ponys">Ponys</a></md-button></md-menu-item>
-                                </md-menu-content>
-                            </md-menu>
-                            <md-menu>
-                                <md-button ng-click="$mdMenu.open()"><a href="#youth">Juvenil</a></md-button>
-                                <md-menu-content>
-                                    <md-menu-item><md-button ng-click="gotoSpringY()"><a href="#spring">Primavera</a></md-button></md-menu-item>
-                                    <md-menu-divider></md-menu-divider>
-                                    <md-menu-item><md-button ng-click="gotoAutumnY()"><a href="#autumn">Otoño</a></md-button></md-menu-item>
-                                </md-menu-content>
-                            </md-menu>
-                            <md-menu>
-                                <md-button ng-click="$mdMenu.open()"><a href="#female">Femenil</a></md-button>
-                                <md-menu-content>
-                                    <md-menu-item><md-button ng-click="gotoSpringF()"><a href="#springF">Primavera/Otoño</a></md-button></md-menu-item>
-                                    <md-menu-divider></md-menu-divider>
-                                    <md-menu-item><md-button ng-click="gotoAutumnF()"><a href="#autumnF">Otoño/Primavera</a></md-button></md-menu-item>
-                                    <md-menu-divider></md-menu-divider>
-                                    <md-menu-item><md-button ng-click="gotoSpringF2()"><a href="#springF2">Otra</a></md-button></md-menu-item>
-                                </md-menu-content>
-                            </md-menu>
-                        </md-menu-bar>
-                    </div>
-                    </div>
-                </md-toolbar>
-                <!--content menu-->    
-                <md-content class="md-padding" layout-sm="column" layout-xs="column" style="height:2000px;" > 
-                <!--BABYS-->
-                <div id="baby">
-                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="ardillas" ng-show="showArdillas">
-                        <md-card >
-                            <md-card-header>
-                                <md-card-header-text>
-                                    <span class="md-title">Ardillas</span>
-                                    <span class="md-subhead">Baby's</span>
-                                </md-card-header-text>
-                            </md-card-header>
-                                 <img ng-src="images/Entrenamiento 5.jpg" class="md-card-image">
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-subhead">Descripcion de imagen:</span>
-                                    </md-card-title-text>
-                                </md-card-title>
-                                 <md-card-footer>
-                                Perros Negros Naucalpan. 
-                                </md-card-footer>
-                        </md-card>
-                    </div>
-                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="castores" ng-show="showCastores">
-                        <md-card >
-                            <md-card-header>
-                                <md-card-header-text>
-                                    <span class="md-title">Castores</span>
-                                    <span class="md-subhead">Baby's</span>
-                                </md-card-header-text>
-                            </md-card-header>
-                                 <img ng-src="images/Entrenamiento 5.jpg" class="md-card-image">
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-subhead">Descripcion de imagen:</span>
-                                    </md-card-title-text>
-                                </md-card-title>
-                                 <md-card-footer>
-                                Perros Negros Naucalpan. 
-                                </md-card-footer>
-                        </md-card>
-                    </div>
-                    <div  flex flex-xs flex-gt-xs="auto" layout="column" id="zorros" ng-show="showZorros">
-                        <md-card >
-                            <md-card-header>
-                                <md-card-header-text>
-                                    <span class="md-title">Zorros</span>
-                                    <span class="md-subhead">Baby's</span>
-                                </md-card-header-text>
-                            </md-card-header>
-                                 <img ng-src="images/Entrenamiento 5.jpg" class="md-card-image">
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-subhead">Descripcion de imagen:</span>
-                                    </md-card-title-text>
-                                </md-card-title>
-                                 <md-card-footer>
-                                Perros Negros Naucalpan. 
-                                </md-card-footer>
-                        </md-card>
-                    </div>
-                </div>
-                <!--INFANTILES-->
-                <div id="childish">
-                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="rabbits" ng-show="showRabbits">
-                        <md-card >
-                            <md-card-header >
-                                <md-card-header-text>
-                                    <span class="md-title">Rabbits</span>
-                                    <span class="md-subhead">Infantil</span>
-                                </md-card-header-text>
-                            </md-card-header>
-                                 <img ng-src="images/rabbits.jpg"  class="md-card-image">
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-subhead">Descripcion de imagen:</span>
-                                    </md-card-title-text>
-                                </md-card-title>
-                                <md-card-footer>
-                                Perros Negros Naucalpan. 
-                                </md-card-footer>
-                        </md-card>
-                    </div>
-                    <div flex felx-xs flex-gt-xs="auto" layout="column" id="hornets" ng-show="showHornets">
-                        <md-card >
-                            <md-card-header>
-                                <md-card-header-text>
-                                    <span class="md-title">Hornets</span>
-                                    <span class="md-subhead">Infantil</span>
-                                </md-card-header-text>
-                            </md-card-header>
-                                 <img ng-src="images/hornets.jpg" class="md-card-image" >
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-subhead">Descripcion de imagen:</span>
-                                    </md-card-title-text>
-                                </md-card-title>
-                                 <md-card-footer>
-                                Perros Negros Naucalpan. 
-                                </md-card-footer>
-                        </md-card>
-                    </div>
-                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="irons" ng-show="showIrons">
-                        <md-card>
-                            <md-card-header>
-                                <md-card-header-text >
-                                    <span class="md-title">Irons</span>
-                                    <span class="md-subhead">Infantil</span>
-                                </md-card-header-text>
-                            </md-card-header>
-                                 <img ng-src="images/irons.jpg" class="md-card-image">
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-">Descripcion de imagen:</span>
-                                    </md-card-title-text>
-                                </md-card-title>
-                                 <md-card-footer>
-                                Perros Negros Naucalpan. 
-                                </md-card-footer>
-                        </md-card>
-                    </div>
-                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="falcons" ng-show="showFalcons">
-                        <md-card>
-                            <md-card-header>
-                                <md-card-header-text>
-                                    <span class="md-title">Falcons</span>
-                                    <span class="md-subhead">Infantil</span>
-                                </md-card-header-text>
-                            </md-card-header>
-                                 <img ng-src="images/falcons.jpg" class="md-card-image">
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-subhead">Descripcion de imagen:</span>
-                                    </md-card-title-text>
-                                </md-card-title>
-                                 <md-card-footer>
-                                Perros Negros Naucalpan. 
-                                </md-card-footer>
-                        </md-card>
-                    </div>
-                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="tauros" ng-show="showTauros">
-                        <md-card >
-                            <md-card-header>
-                                <md-card-header-text>
-                                    <span class="md-title">Tauros</span>
-                                    <span class="md-subhead">Infantil</span>
-                                </md-card-header-text>
-                            </md-card-header>
-                                 <img ng-src="images/tauros.jpg" class="md-card-image">
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-subhead">Descripcion de imagen:</span>
-                                    </md-card-title-text>
-                                </md-card-title>
-                                 <md-card-footer>
-                                Perros Negros Naucalpan. 
-                                </md-card-footer>
-                        </md-card>
-                    </div>
-                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="ponys" ng-show="showPonys">
-                        <md-card >
-                            <md-card-header>
-                                <md-card-header-text>
-                                    <span class="md-title">Ponys</span>
-                                    <span class="md-subhead">Infantil</span>
-                                </md-card-header-text>
-                            </md-card-header>
-                                 <img ng-src="images/ponys.jpg" class="md-card-image">
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-subhead">Descripcion de imagen:</span>
-                                    </md-card-title-text>
-                                </md-card-title>
-                                 <md-card-footer>
-                                Perros Negros Naucalpan. 
-                                </md-card-footer>
-                        </md-card>
-                    </div>
-                </div>
-                <!--JUVENIL-->
-                <div id="youth">
-                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="spring" ng-show="showSpringYouth">
-                        <md-card >
-                            <md-card-header>
-                                <md-card-header-text>
-                                    <span class="md-title">Primavera</span>
-                                    <span class="md-subhead">Juvenil</span>
-                                </md-card-header-text>
-                            </md-card-header>
-                                 <img ng-src="images/Entrenamiento 1.jpg" class="md-card-image">
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-subhead">Descripcion de imagen:</span>
-                                    </md-card-title-text>
-                                </md-card-title>
-                                 <md-card-footer>
-                                Perros Negros Naucalpan. 
-                                </md-card-footer>
-                        </md-card>
-                    </div>
-                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="autumn" ng-show="showAutumnYouth">
-                        <md-card >
-                            <md-card-header>
-                                <md-card-header-text>
-                                    <span class="md-title">Otoño</span>
-                                    <span class="md-subhead">Juvenil</span>
-                                </md-card-header-text>
-                            </md-card-header>
-                                 <img ng-src="images/Entrenamiento 1.jpg" class="md-card-image">
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-subhead">Descripcion de imagen:</span>
-                                    </md-card-title-text>
-                                </md-card-title>
-                                 <md-card-footer>
-                                Perros Negros Naucalpan. 
-                                </md-card-footer>
-                        </md-card>
-                    </div>
-                </div>
-                <!--FEMENIL-->
-                <div id="female">
-                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="springF" ng-show="showSpringFemale">
-                        <md-card >
-                            <md-card-header>
-                                <md-card-header-text>
-                                    <span class="md-title">Primavera</span>
-                                    <span class="md-subhead">Femenil</span>
-                                </md-card-header-text>
-                            </md-card-header>
-                                 <img ng-src="images/Gimnasio 6.jpg" class="md-card-image">
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-subhead">Descripcion de imagen:</span>
-                                    </md-card-title-text>
-                                </md-card-title>
-                                 <md-card-footer>
-                                Perros Negros Naucalpan. 
-                                </md-card-footer>
-                        </md-card>
-                    </div>
-                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="autumnF" ng-show="showAutumnFemale">
-                        <md-card >
-                            <md-card-header>
-                                <md-card-header-text>
-                                    <span class="md-title">Otoño</span>
-                                    <span class="md-subhead">Femenil</span>
-                                </md-card-header-text>
-                            </md-card-header>
-                                 <img ng-src="images/Gimnasio 6.jpg" class="md-card-image">
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-subhead">Descripcion de imagen:</span>
-                                    </md-card-title-text>
-                                </md-card-title>
-                                 <md-card-footer>
-                                Perros Negros Naucalpan. 
-                                </md-card-footer>
-                        </md-card>
-                    </div>
-                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="springF2" ng-show="showSpringFemale2">
-                        <md-card >
-                            <md-card-header>
-                                <md-card-header-text>
-                                    <span class="md-title">Primavera2</span>
-                                    <span class="md-subhead">Femenil</span>
-                                </md-card-header-text>
-                            </md-card-header>
-                                 <img ng-src="images/Gimnasio 6.jpg" class="md-card-image">
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-subhead">Descripcion de imagen:</span>
-                                    </md-card-title-text>
-                                </md-card-title>
-                                 <md-card-footer>
-                                Perros Negros Naucalpan. 
-                                </md-card-footer>
-                        </md-card>
-                    </div>
-                </div>
-                </md-content>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Facilities Section -->
-    <section id="facilities" class="bg-light-gray" ng-show="showFacilities">
-        <div class="container">
-
-           <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="col-lg-12 text-center">
-                            <h2 class="section-heading">INSTALACIONES</h2>
-                            <div class="slogan">
-                                <img src="images/Slogan.png">
-                            </div>
-                            <h3 class="section-subheading text-muted">Dejando Huella</h3>
-                        </div>
-                    </div>
-            </div>
-
-                <div class="row">
-
-                    <div class="col-md-4 col-md-offset-1">
-                        
-                        <div role="presentation" class="dropdown bnt-group">
-                            <button class="btn btn-success dropdown-toggle btn-lg" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> GALERÍA <span class="caret"></span></button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li role="presentation"><a ng-click="showEntre($event)">Áreas de entrenamiento y Canchas de basket</a></li><li class="divider"></li>
-                                <li role="presentation"><a class="" ng-click="showPlay($event)">Campo de juego y Entrenamientos</a></li><li class="divider"></li>
-                                <li role="presentation"><a class="" ng-click="showOffi($event)">Auditorio, Oficina y Cafetería</a></li><li class="divider"></li>
-                                <li role="presentation"><a class="" ng-click="showSer($event)">Casilleros y Servicio Médico</a></li><li class="divider"></li>
-                                <li role="presentation"><a class="" ng-click="showGim($event)">Gimnasio y Vestidores</a></li><li class="divider"></li>
-                                <li role="presentation"><a class="" ng-click="showPal($event)">Palco de sonido, Marcador, Tribunas y Palcos</a></li><li class="divider"></li>
-                                <li role="presentation"><a class="" ng-click="showBB($event)">Edificios y Baños</a></li>
-                            </ul> 
-                        </div>
-                        
-                   </div>
-                </div>
-                <br>
-                 
-                <div class="row">
-                   
-                    <div class="col-md-12 col-lg-12">
-                       <img src="images/Instalaciones/Croquis.jpg" class="img-responsive img-rounded">
-                    </div>
-                    
-                </div>
-
-        </div>
-    </section> 
-    &nbsp;<br>&nbsp;
-    <!-- Notice of Privacy Section -->
-    <section id="noticeprivacy" ng-show="showPrivacy">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Aviso de privacidad</h2>
-                        <div class="slogan">
-                            <img src="images/Slogan.png">
-                        </div>
-                        <h3 class="section-subheading text-muted">Dejando Huella</h3>
-                    </div>
-                </div>
-            </div>
-            <md-toolbar>
-                <div class="md-toolbar-tools" >
-                    <md-toolbar-filler layout layout-align="center center">
-                         <img src="images/perro1.png">
-                    </md-toolbar-filler>   
-                    <h2> Aviso de Privacidad</h2>
-                    <span flex></span>
-                    <md-button class="md-icon-button">
-                       <i class="material-icons">menu</i>
-                    </md-button>
-                </div>
-            </md-toolbar>
-            <md-content class="page-container">
-                <md-card class="page" layout-padding>
-                <p>De acuerdo a lo Previsto en la “Ley Federal de Protección de Datos Personales”, declara el <b>CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS)</b>, ser una asociación legalmente constituida de conformidad con las leyes mexicanas, con domicilio en <b>Avenida Badel Powell Sin Número, Colonia Santa Cruz Acatlán, Municipio de Naucalpan, Estado de México</b>, y como responsable del tratamiento de sus datos personales, hace de su conocimiento que la información de nuestros Socios, Asociados,  Usuarios y Público en general  es tratada de forma estrictamente confidencial por lo que al proporcionar sus datos personales,<b> tales como:</b></br></p>
-                <div>        
-                    <ol><b>
-                        <li>Nombres Completos.</li>
-                        <li>Dirección.</li>
-                        <li>Teléfonos de Hogar, Oficina o móviles.</li>
-                        <li>Correo Electrónico.</li>
-                        <li>Ocupación.</li>
-                        <li>Grupo Sanguíneo y RH</li>
-                        <li>Alergias</li>
-                        <li>Lesiones</li> 
-                        <li>Padecimientos</li> 
-                        <li>Medicación</li> 
-                        <li>Tipo de Seguridad Social</li> 
-                        <li>No. De Póliza de seguro </li>
-                        </b>
-                    </ol>
-                </div>
-                <p>Estos serán utilizados única y exclusivamente para los siguientes fines:</p></br>
-
-                <div>
-                    <ol type="a">
-                        <li>Finalidades originarias y necesarias: Registro Interno para uso de las instalaciones del responsable como integrante en el equipo o categoría al que pertenezca el socio, asociado o usuario. En el caso de ser información proporcionada por el público en General se utilizará para <b>cualquier finalidad análoga o compatible con las anteriores.</b></li>
-
-                        <li><b>Tramites de Registro y participación</b> de nuestros Socios, Asociados y Usuarios en los torneos, campeonatos, competencias, que son organizados por las diversas Ligas Nacionales de Football Americano</li>   
-
-                        <li>Finalidades adicionales.  <b>1. Campañas informativas de las actividades del CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS).  2. Información y Prestación de Servicios del CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS) 3. Actualización de la Base de Datos del CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS).</b></li>
-                    </ol>
-                </div>
-
-                <p>En el caso de Datos Sensibles, tales como:</p></br>
-                <div>
-                    <ol>
-                        <li><b>. Datos Personales (Cónyuge, Estado Civil, Nacionalidad, Educación, Hijos, y demás relacionados).</b></li>
-                        <li><b>Referencias familiares y no familiares (Nombre, Dirección, Teléfono, relación, etc.).</b></li>
-                    </ol>
-                </div>       
-
-                <p>Estos serán utilizados única y exclusivamente para los siguientes fines:</p></br>
-                <div>
-                    <ol>
-                        <li>Informar sobre emergencias, circunstancias fortuitas o de fuerza mayor que deban ser de su conocimiento para asistir al socio, asociado o usuario.</li>
-
-                        <li>Uso de las instalaciones del <b>CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS) </b> como integrante en el equipo o categoría al que pertenezca el socio, asociado o usuario y mediante la base de datos estar en oportunidad de brindarle el mejor servicio.</li>
-
-                        <li>Cualquier finalidad análoga o compatible con las anteriores.</li>
-                    </ol>
-                </div>    
-                <p>Para prevenir el acceso no autorizado a sus datos personales y con el fin de asegurar que la información sea utilizada para los fines establecidos en este aviso de privacidad, hemos establecido diversos procedimientos con la finalidad de evitar el uso o divulgación no autorizados de sus datos, permitiéndonos tratarlos debidamente.</p></br>
-
-                <p>Así mismo, le informamos que sus datos personales pueden ser Transmitidos para ser tratados por personas distintas a <b>CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS)</b>, principalmente como se ha señalado previamente <b>Tramites de Registro y participación</b>de nuestros Socios, Asociados y Usuarios en los torneos, campeonatos, competencias, que son organizados por las diversas Ligas Nacionales de Football Americano.</p> </br>
-
-                <p>Todos sus datos personales son tratados de acuerdo a la legislación aplicable y vigente en el país, por ello le informamos que usted tiene en todo momento los derechos <ins><em>(ARCO) Se trata de derechos cuyo ejercicio es personalísimo, es decir, que sólo pueden ser ejercidos por el titular de los datos, por su representante legal o por un representante acreditado de acceder, rectificar, cancelar u oponerse al tratamiento que le damos a sus datos personales</em></ins>; derecho que podrá hacer valer a través del <b>Área de Privacidad encargada de la seguridad de datos personales en el Teléfono (0155) 5088-2325.</b></p></br> 
-
-                <p>A través de estos canales usted podrá actualizar sus datos y especificar el medio por el cual desea recibir información, ya que, en caso de no contar con esta especificación de su parte, <b>CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS)</b> establecerá libremente el canal que considere pertinente para enviarle información.</p></br>
-
-                <p>Este aviso de privacidad podrá ser modificado por <b>CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS)</b>, dichas modificaciones serán oportunamente informadas a través de correo electrónico, teléfono, o cualquier otro medio de comunicación que <b>CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS)</b> determine para tal efecto.</p></br><br>
-
-                <p><b>ATENTAMENTE</b></p><br><br>
-                <p><b>CLUB NAUCALPAN FOOTBALL A.C.</b></p>
-                <p><b>“PERROS NEGROS”</b></p><br><br>
-                </md-card>    
-            </md-content>    
-
-        </div>
-    </section>
-    &nbsp;<br>&nbsp;
-     <!-- Team Section -->
-    <section  id="team" ng-show="showTeam">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Unete al equipo!</h2>
-                        <div class="slogan">
-                            <img src="images/Slogan.png">
-                        </div>
-                        <h3 class="section-subheading text-muted">Dejando Huella</h3>
-                        <div ng-cloak  class="container-inst" >
-                           <md-button class="md-primary md-raised" ng-click="showInstru($event)">
-                                Indicaciones 
-                           </md-button>
-                           <br>
-                            <md-button class="md-primary md-raised" ng-click="showAdvanced($event)">
-                                Términos y condiciones
+                <!-- Collect the nav links, forms, and other content for toggling 
+                        I just remove the collapese class in the next div to make it responsive -->
+                <div flex  class="collapse navbar-collapse " id="navegacion-fm">
+                    <ul class="nav navbar-nav navbar-right" >
+                        <li class="nav-item">
+                            <a  class="pointer" ng-click="gotoAbout()" >Quienes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a  class="pointer" ng-click="gotoFacilities()">Instalaciones</a>
+                        </li >
+                        <li class="nav-item" >
+                            <a class="pointer " ng-click="gotoCategory()">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer"  href="Galeria/index.html">Album</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoEvent()">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoContact()">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoNoticePrivacy()">Aviso de Privacidad</a>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <md-button class="md-icon-button md-primary  dropdown-toggle " data-toggle="dropdown">
+                                <md-icon class="material-icons">account_circle</md-icon>
                             </md-button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-12 text-center" ng-hide="registerVisibility">
-                <a ng-click="showRegister()" class="pointer btn btn-xl">Solicitud de Registro</a>
-            </div>
-            <md-content ng-show="registerVisibility" layout="column" flex>
-                <md-toolbar layout="row" class="m-accent md-hue-2">
-                    <div class="md-toolbar-tools">
-                        <h2><span>Registro</span></h2>
-                        <span flex></span>
-                        <md-button class="md-icon-button" ng-click="ClearRegister()" title="Deshacer" > 
-                            <md-icon class="material-icon">undo</md-icon>
-                        </md-button>
-                    </div>
-                </md-toolbar>
-                <!--CONTENT  REGISTER-->
-                <md-content layout-padding>
-                    <form method="POST" name="register" role="form" ng-submit="send(info)" layout-padding autocomplete="false" novalidate>
-                        <section id="InfPersonal" ng-hide="formHide1">
-                            <md-content layout-padding>
-                                <h4>-Datos Personales-</h4><br>
-                                <md-input-container class="md-block md-accent">
-                                    <label>Nombre/s</label>
-                                    <input type="text" ng-model="info.name" name="userName" ng-minlength="3" required>
-                                    <div ng-messages="register.userName.$error" ng-if="register.$invalid">
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                        <div ng-message="minlength">El campo debe tener al menos 3 carácteres</div>
-                                    </div>
-                                </md-input-container>
-                                <md-input-container class=" md-block md-accent">
-                                    <label>Apellido Paterno</label>
-                                    <input type="text" ng-model="info.LastNameP" name="userLastNameP" ng-minlength="3" required>
-                                    <div ng-messages="register.userLastNameP.$error" ng-if="register.$invalid">
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                        <div ng-message="minlength">El campo debe tener al menos 3 carácteres</div>
-                                    </div>
-                                </md-input-container>
-                                <md-input-container class=" md-block md-accent">
-                                    <label>Apellido Materno</label>
-                                    <input type="text" ng-model="info.LastNameM" name="userLastNameM" ng-minlength="3" required>
-                                    <div ng-messages="register.userLastNameM.$error" ng-if="register.$invalid">
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                        <div ng-message="minlength">El campo debe tener al menos 3 carácteres</div>
-                                    </div>
-                                </md-input-container>
-                       
-                                <md-input-contatiner class="md-block md-accent">
-                                    <label>Fecha de Nacimiento:</label>
-                                    <!--<input type="date" ng-model="info.birthDate" name="userbirthDate" required>-->
-                                    <md-datepicker ng-model="info.birthDate" name="userbirthDate" md-placeholder="Ingresa Fecha" required></md-datepicker>
-                                    <div ng-messages="register.userbirthDate.$error" ng-if="register.$invalid"> 
-                                        <div ng-message="required"><font color="#FFA500">El campo es obligatorio</font></div>
-                                    </div>
-                                </md-input-contatiner>
-                                <br>
-                                <br>
-                                <md-input-container>
-                                    <label>Edad</label>
-                                    <input type="number" ng-model="info.Age" name="userAge" min="5" max="99" required>
-                                    <div ng-messages="register.userAge.$error" ng-if="register.$invalid"> 
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                            <div ng-message="min">Introduce un valor entre 5 mínimo y 99 máximo</div>
-                                            <div ng-message="max">Introduce un valor entre 5 mínimo y 99 máximo</div>
-                                    </div>
-                                </md-input-container>
-                                <md-input-container>
-                                    <label>Estatura: /cm</label>
-                                    <input type="number" ng-model="info.Height" name="userHeight" min="60" max="300" required>
-                                    <div ng-messages="register.userHeight.$error" ng-if="register.$invalid">   
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                        <div ng-message="min">Introduce un valor entre 60 mínimo y 300 máximo</div>
-                                        <div ng-message="max">Introduce un valor entre 60 mínimo y 300 máximo</div>
-                                    </div>
-                                </md-input-container>
-                                <md-input-container>
-                                    <label>Peso /kg</label>
-                                    <input type="number" ng-model="info.Weight" name="userWeight" min="15" max="200" required>
-                                    <div ng-messages="register.userWeight.$error" ng-if="register.$invalid">   
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                        <div ng-message="min">Introduce un valor entre 15 mínimo y 200 máximo</div>
-                                        <div ng-message="max">Introduce un valor entre 15 mínimo y 200 máximo</div>
-                                    </div>
-                                </md-input-container>
-                                <!--User Email-->
-                                <md-input-container>
-                                    <label>Email</label>
-                                    <input type="email" ng-model="info.Email" name="userEmail" required>
-                                    <div ng-messages="register.userEmail.$error" ng-if="register.$invalid"> 
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                        <div ng-message="email">Introduce un Email valido</div>
-                                    </div>
-                                </md-input-container>
-
-                                <div>
-                                    <input type="checkbox" ng-model="info.ShowSiblings">
-                                    &nbsp;&nbsp;
-                                    <label>Tienes hermanos en el club</label>
-                                </div>
-                                <md-input-container>
-                                    <label>No. de Hermanos en el club</label>
-                                    <input type="number" ng-model="info.Siblings" ng-disabled="!info.ShowSiblings" name="userSiblings" min="1" max="10" ng-required="info.ShowSiblings">
-                                    <div ng-messages="register.userSiblings.$error" ng-if="register.$invalid"> 
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                        <div ng-message="min">Introduce un valor entre 1 mínimo y 10 máximo</div>
-                                        <div ng-message="max">Introduce un valor entre 1 minimo y 10 máximo</div>
-                                    </div>
-                                </md-input-container>
-                                <!--User Address ng-controller="userparentsController" layout="column" flex-->
-                                <br>
-                                <h4>-Domicilio del Jugador-</h4>
-                                <br>
-                                <md-content >
-                                <md-input-container class="md-block md-accent">
-                                    <label>Calle y N°</label>
-                                    <input type="text" ng-model="info.Street" name="userStreet" required>
-                                    <div ng-messages for="register.userStreet.$error" ng-if="register.$invalid">   
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                    </div>
-                                </md-input-container>
-
-                                <md-input-container>
-                                    <label>Estado</label>
-                                    <md-select ng-model="info.Estado" ng-change="ShowMunicipio()" name="userEstado" required>
-                                        <md-option ng-repeat="Estado in Estados | orderBy:'Estado' as filtered_result track by $index" value={{Estado.Estado}} tabindex="0" class="ng-scope" data-ng-animate="1">{{Estado.Estado}}</md-option>
-                                    </md-select>
-                                    <div ng-messages="register.userEstado.$error" ng-if="register.$invalid">   
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                    </div>
-                                </md-input-container>
-
-                                <md-input-container>
-                                    <label>Delegación o Municipio</label>
-                                    <md-select ng-model="info.Municipio" ng-change="ShowColonia()" name="userMunicipio" ng-disabled="!(info.Estado)" required>
-                                        <md-option ng-repeat="Municipio in Municipios | orderBy:'Municipio'" value={{Municipio.Municipio}}>{{Municipio.Municipio}}</md-option>
-                                    </md-select>
-                                    <div ng-messages="register.userMunicipio.$error" ng-if="register.$invalid">   
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                    </div>
-                                </md-input-container>
-
-                                <md-input-container>
-                                    <label>Colonia</label>
-                                    <md-select ng-model="info.Colonia" ng-change="ShowCP()" name="userColonia" ng-disabled="!(info.Municipio)" required>
-                                        <md-option ng-repeat="Colonia in Colonias | orderBy:'Colonia'" value={{Colonia.Colonia}}>{{Colonia.Colonia}}</md-option>                                        
-                                    </md-select>
-                                    <div ng-messages="register.userColonia.$error" ng-if="register.$invalid">   
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                    </div>
-                                </md-input-container>
-
-                                <md-input-container>
-                                    <label>CP</label>
-                                    <md-select ng-model="info.CP" name="userCP" ng-disabled="!(info.Colonia)" required>
-                                        <md-option ng-repeat="CP in CPs | orderBy:'CodigoPostal'" value={{CP.CodigoPostal}}>{{CP.CodigoPostal}}</md-option>
-                                    </md-select>
-                                    <div ng-messages="register.userCP.$error" ng-if="register.$invalid">   
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                    </div>
-                                </md-input-container>
-                                </md-content>    
-                                <!--User Cellphone-->
-                                <br>
-                                <h4>-Teléfonos-</h4>
-                                <br>
-                                <md-input-container>
-                                    <label>Teléfono Particular</label>
-                                    <input type="tel" ng-model="info.PhoneP" name="userPhoneP" required>
-                                    <div ng-messages="register.userPhoneP.$error" ng-if="register.$invalid">   
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                    </div>
-                                </md-input-container>
-                                <md-input-container>
-                                    <label>Teléfono Movil</label>
-                                    <input type="tel" ng-model="info.PhoneM" name="userPhoneM" required>
-                                    <div ng-messages="register.userPhoneM.$error" ng-if="register.$invalid">   
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                    </div>
-                                </md-input-container>
-                                <!--User School Information-->
-                                <br>
-                                <h4>-Escuela-</h4>
-                                <br>
-                                <md-input-container>
-                                    <label>Nombre de la Escuela</label>
-                                    <input type="text" ng-model="info.School" name="userSchool" required>
-                                    <div ng-messages="register.userSchool.$error" ng-if="register.$invalid">   
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                    </div>
-                                </md-input-container>
-                                <md-input-container>
-                                    <label>Grado</label>
-                                    <input type="text" ng-model="info.Grade" name="userGrade" required>
-                                    <div ng-messages="register.userGrade.$error" ng-if="register.$invalid"> 
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                    </div>
-                                </md-input-container>
-                                <md-input-container>
-                                    <label>Promedio</label>
-                                    <input type="number" ng-model="info.Average" name="userAverage" min="5" max="10" required>
-                                    <div ng-messages="register.userAverage.$error" ng-if="register.$invalid"> 
-                                        <div ng-message="required">El campo es obligatorio</div>
-                                        <div ng-message="min">Introduce un valor entre 5 mínimo y 10 máximo</div>
-                                        <div ng-message="max">Introduce un valor entre 5 mínimo y 10 máximo</div>
-                                    </div>
-                                </md-input-container>
-                                <br>
-                                <div class="text-right">
-                                    <md-button ng-model="button"  class="md-button md-fab" ng-click="showForm2()" ng-disabled="!(info.name && info.LastNameP && info.LastNameM && info.birthDate && info.Height && info.Weight && info.Email && info.Street && info.Estado && info.Municipio && info.Colonia && info.CP && info.PhoneP && info.PhoneM && info.School && info.Grade && info.Average)"> 
-                                        <div class="md-panel-outer-wrapper md-panel-is-showing" style="pointer-events: none; z-index: 100;">
-                                            <md-tooltip md-direction="top">Siguiente</md-tooltip>
-                                        </div>
-                                        <md-icon class="material-icon">chevron_right</md-icon>
-                                    </md-button>
-                                </div>
-                            </md-content>
-                        </section>
-
-                        <!--PARENTS-->
-                        <section id="parents" ng-show="formShow2" ng-hide="formHide2">
-                            <md-content ng-controller="userparentsController" layout="column" flex>
-                                <!--CONTENT-->
-                                <md-content layout-padding>
-                                    <h4>-Datos del Padre-</h4>
-                                    <!--FATHER-->
-                                    <div>
-                                        <input type="checkbox" ng-change="ClearFather()" ng-model="info.NoAplicaF">
-                                        &nbsp;&nbsp;
-                                        <label>No aplica</label>
-                                    </div>
-                                     <div>
-                                        <input type="checkbox" name="userFatherDelegate" ng-model="info.FatherDelegate">
-                                        &nbsp;&nbsp;
-                                        <label>Delegado de alguna categoría</label>
-                                    </div>
-                                    <md-input-container class="md-block md-accent">
-                                        <label>Nombre</label>
-                                        <input type="text" ng-model="info.FatherName" name="userFatherName" ng-minlength="3" ng-disabled="info.NoAplicaF" ng-required="!info.NoAplicaF">
-                                        <div ng-messages="register.userFatherName.$error" ng-if="register.$invalid">
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                            <div ng-message="minlength">El campo debe tener al menos 3 carácteres</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container class="md-block md-accent">
-                                        <label>Apellido</label>
-                                        <input type="text" ng-model="info.FatherLastName" name="userFatherLastName" ng-minlength="3" ng-disabled="info.NoAplicaF" ng-required="!info.NoAplicaF">
-                                        <div ng-messages="register.userFatherLastName.$error" ng-if="register.$invalid">
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                            <div ng-message="minlength">El campo debe tener al menos 3 carácteres</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Profesión u Ocupación</label>
-                                            <input type="text" ng-model="info.ProfessionF" name="userProfessionF" ng-disabled="info.NoAplicaF" ng-required="!info.NoAplicaF">
-                                            <div ng-messages="register.userProfessionF.$error" ng-if="register.$invalid">
-                                                <div ng-message="required">El campo es obligatorio</div>
-                                            </div>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Teléfono Particular </label>
-                                        <input type="tel" ng-model="info.FatherPhoneP" name="userFatherPhoneP" ng-disabled="info.NoAplicaF" ng-required="!info.NoAplicaF">
-                                        <div ng-messages="register.userFatherPhoneP.$error" ng-if="register.$invalid">
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Teléfono Movil</label>
-                                        <input type="tel" ng-model="info.FatherPhoneM" name="userFatherPhoneM" ng-disabled="info.NoAplicaF" ng-required="!info.NoAplicaF">
-                                        <div ng-messages="register.userFatherPhoneM.$error" ng-if="register.$invalid">
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Email</label>
-                                        <input type="email" ng-model="info.FatherEmail" name="userFatherEmail" ng-disabled="info.NoAplicaF" ng-required="!info.NoAplicaF">
-                                        <div ng-messages="register.userFatherEmail.$error" ng-if="register.$invalid">
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                            <div ng-message="email">Introduce un Email valido</div>
-                                        </div>
-                                    </md-input-container>
-                                   
-                                    <!--MOTHER-->
-                                    <br>
-                                    <h4>-Datos de la Madre-</h4>
-                                    <br>
-
-                                    <div>
-                                        <input type="checkbox" ng-change="ClearMother()" ng-model="info.NoAplicaM">
-                                        &nbsp;&nbsp;
-                                        <label>No aplica</label>
-                                    </div>
-                                     <div>
-                                        <input type="checkbox" name="userMotherDelegate" ng-model="info.MotherDelegate">
-                                        &nbsp;&nbsp;
-                                        <label>Delegada de alguna categoría</label>
-                                    </div>    
-                                    <md-input-container class="md-block md-accent">
-                                        <label>Nombre</label>
-                                        <input type="text" ng-model="info.MotherName" name="userMotherName" ng-minlength="3" ng-disabled="info.NoAplicaM" ng-required="!info.NoAplicaM">
-                                        <div ng-messages="register.userMotherName.$error" ng-if="register.$invalid">
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                            <div ng-message="minlength">El campo debe tener al menos 3 carácteres</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container class="md-block md-accent">
-                                        <label>Apellido</label>
-                                        <input type="text" ng-model="info.MotherLastName" name="userMotherLastName" ng-minlength="3" ng-disabled="info.NoAplicaM" ng-required="!info.NoAplicaM">
-                                        <div ng-messages="register.userMotherLastName.$error" ng-if="register.$invalid">
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                            <div ng-message="minlength">El campo debe tener al menos 3 carácteres</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Profesión u Ocupación</label>
-                                        <input type="text" ng-model="info.ProfessionM" name="userProfessionM" ng-disabled="info.NoAplicaM" ng-required="!info.NoAplicaM">
-                                        <div ng-messages="register.userProfessionM.$error" ng-if="register.$invalid">
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Teléfono Particular</label>
-                                        <input type="tel" ng-model="info.MotherPhoneP" name="userMotherPhoneP" ng-disabled="info.NoAplicaM" ng-required="!info.NoAplicaM">
-                                        <div ng-messages="register.userMotherPhoneP.$error" ng-if="register.$invalid">
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Teléfono Movil</label>
-                                        <input type="tel" ng-model="info.MotherPhoneM" name="userMotherPhoneM" ng-disabled="info.NoAplicaM" ng-required="!info.NoAplicaM">
-                                        <div ng-messages="register.userMotherPhoneM.$error" ng-if="register.$invalid">
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Email</label>
-                                        <input type="email" ng-model="info.MotherEmail" name="userMotherEmail" ng-disabled="info.NoAplicaM" ng-required="!info.NoAplicaM">
-                                        <div ng-messages="register.userMotherEmail.$error" ng-if="register.$invalid">
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                            <div ng-message="email">Introduce un Email valido</div>
-                                        </div>
-                                    </md-input-container>
-                                    
-                                </md-content>
-                                <div class="text-right">
-                                    <md-button class="md-button md-fab" ng-click="showForm1()"> 
-                                        <div class="md-panel-outer-wrapper md-panel-is-showing" style="pointer-events: none; z-index: 100;">
-                                            <md-tooltip md-direction="top">Atras</md-tooltip>
-                                        </div>
-                                        <md-icon class="material-icon">chevron_left</md-icon>
-                                    </md-button>
-                                    <md-button class="md-button md-fab" ng-click="showForm3()" ng-disabled="(!(info.FatherName && info.FatherLastName && info.ProfessionF && info.FatherPhoneP && info.FatherPhoneM && info.FatherEmail) && !info.NoAplicaF) || (!(info.MotherName && info.MotherLastName && info.ProfessionM && info.MotherPhoneP && info.MotherPhoneM && info.MotherEmail) && !info.NoAplicaM)">
-                                        <div class="md-panel-outer-wrapper md-panel-is-showing" style="pointer-events: none; z-index: 100;">
-                                            <md-tooltip md-direction="top">Siguiente</md-tooltip>
-                                        </div>
-                                        <md-icon class="material-icon">chevron_right</md-icon>
-                                    </md-button>
-                                </div>
-                            </md-content>
-                        </section>
-                        <!-- section medic-->
-                        <section id="medico" ng-hide="formHide3" ng-show="formShow3">
-                            <md-content ng-controller="userMedicoController" layout="column" flex>
-                                <!--CONTENT-->
-                                <md-content layout-padding>
-                                    <h4>-Reporte Médico-</h4>
-                                    <br>
-                                    <md-input-container class="md-block md-accent">
-                                        <label>Tipo de Seguro:</label>
-                                        <md-select ng-model="info.Insurance" name="userInsurance" required>
-                                            <md-option ng-repeat="Insurance in insurances" value={{Insurance.name}}>{{Insurance.name}}</md-option>                                            
-                                        </md-select>
-                                        <div ng-messages="register.userInsurance.$error" ng-if="register.$invalid">   
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>No de Póliza de seguro</label>
-                                        <input type="text" ng-model="info.InsurancePolicy" name="userInsurancePolicy">
-                                        <div ng-messages="register.userInsurancePolicy.$error" ng-if="register.$invalid">
-                                             <div ng-message="required">El campo es obligatorio</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Aseguradora</label>
-                                        <input type="text" ng-model="info.InsuranceCarrier" name="userInsuranceCarrier">
-                                        <div ng-messages="register.InsuranceCarrier.$error" ng-if="register.$invalid"> 
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Médico Familiar(Opcional)</label>
-                                        <input type="text" ng-model="info.Doctor" name="userDoctor">
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Teléfono del médico(Opcional)</label>
-                                        <input type="tel" ng-model="info.Phone" name="doctorPhone" />
-                                    </md-input-container>
-                                    <br>
-                                    <h4>-Perfil Médico-</h4>
-                                    <br>
-                                    <md-input-container class="md-block md-accent">
-                                        <label>Grupo Sanguineo y RH </label>
-                                        <md-select ng-model="info.RH" name="userRH" required>
-                                            <md-option  ng-repeat="RH in blood" value={{RH.type}}>{{RH.type}}</md-option>
-                                        </md-select>
-                                        <div ng-messages="register.userRH.$error" ng-if="register.$invalid"> 
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Alergias</label>
-                                        <input type="text" ng-model="info.Allergies" name="userAllergies" required>
-                                        <div ng-messages="register.userAllergies.$error" ng-if="register.$invalid">
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Lesiones previas </label>
-                                        <input type="text" ng-model="info.Injuries" name="userInjuries" required>
-                                        <div ng-messages="register.userInjuries.$error" ng-if="register.$invalid">
-                                            <div ng-message="required">El campo es obligatorio</div>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Procedimientos Actuales(Opcional)</label>
-                                        <input type="text" ng-model="info.Procedures" name="userProcedures" />
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>Medicación Actual(Opcional)</label>
-                                        <input type="text" ng-model="info.Medication" name="userMedication"/>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>¿El aspirante lleva consigo su medicamento y sabe cómo suministrarselo?: (Opcional)</label>
-                                        <md-select ng-model="info.med">
-                                            <md-option ng-repeat="med in medicin" value={{med.name}}>{{med.name}}</md-option>
-                                        </md-select>
-                                    </md-input-container>
-                                    <md-input-container>
-                                        <label>El aspirante usa: (Opcional)</label>
-                                        <md-select ng-model="info.nece" multiple>
-                                            <md-option ng-repeat="nece in necessities" value={{nece.name}}>{{nece.name}}</md-option>
-                                        </md-select>
-                                    </md-input-container>
-                                    <div class="text-right">
-                                        <md-button class="md-button md-fab" ng-click="showForm2()">
-                                            <div class="md-panel-outer-wrapper md-panel-is-showing" style="pointer-events: none; z-index: 100;">
-                                                <md-tooltip md-direction="top">Atras</md-tooltip>
-                                            </div> 
-                                            <md-icon class="material-icon">chevron_left</md-icon>
-                                        </md-button>
-                                        <md-button class="md-button md-fab" ng-click="showForm4()" ng-disabled="!(info.Insurance && info.RH && info.Allergies && info.Injuries)">
-                                            <div class="md-panel-outer-wrapper md-panel-is-showing" style="pointer-events: none; z-index: 100;">
-                                                <md-tooltip md-direction="top">Siguiente</md-tooltip>
-                                            </div>
-                                            <md-icon class="material-icon">chevron_right</md-icon>
-                                        </md-button>
-                                    </div>
-                                </md-content>
-                            </md-content>
-                        </section>
-
-                        <!--TRAINING-->    
-                        <section id="trainig" ng-show="formShow4" ng-hide="formHide4">
-                            <md-content  ng-controller="userTrainingController" layout="column" flex>
-                                <!--CONTENT-->
-                                <md-content layout-padding>
-                                        <h4>-Experiencia Deportiva</h4>
-                                        <br>
-                                        <md-input-container class="md-block">
-                                            <label>Experiencia (Opcional)</label>
-                                            <md-select ng-model="info.Sport">
-                                                <md-option ng-repeat="Sport in sports" value={{Sport.name}}>{{Sport.name}}</md-option>
-                                            </md-select>
-                                        </md-input-container>
-                                        <div>
-                                            <input type="checkbox" ng-model="info.ShowAnosPN">
-                                            &nbsp;&nbsp;
-                                            <label>¿Has jugado con Perros Negros?</label>
-                                        </div>
-                                        <md-input-container ng-show="info.ShowAnosPN">        
-                                            <label>Años jugandos en PN.</label>
-                                            <input type="number" ng-model="info.YearsPlaying" min="1" max="30" placeholder="0" ng-disabled="!info.ShowAnosPN" name="userYearsPlaying" ng-required="info.ShowAnosPN">
-                                             <div ng-messages="register.userYearsPlaying.$error" ng-if="register.$invalid">
-                                                <div ng-message="required">El campo es obligatorio<i class="material-icons">info</i></div>
-                                                <div ng-message="email">Introduce un valor entre 1 y 30</div>
-                                            </div>
-                                            <div class="md-panel-outer-wrapper md-panel-is-showing" style="pointer-events: none; z-index: 100;">
-                                                <md-tooltip md-direction="top">Si no has jugado con perros negros, por favor no introduzcas ningun valor y desmarca la casilla.</md-tooltip>
-                                            </div>
-                                            
-                                        </md-input-container>
-                                        <br>
-                                        <label>Otro Equipo</label>
-                                        <br>
-                                        <md-input-container>        
-                                            <label>Años jugandos (Opcional)</label>
-                                            <input type="number" ng-model="info.YearsPlayingOther" placeholder="0" min="1" max="30" name="userYearsPlayingOther">
-                                        </md-input-container>
-
-                                        <md-input-container>        
-                                            <label>Equipo (Opcional)</label>
-                                            <input type="text" ng-model="info.Team" placeholder="Ninguno" name="userTeam">
-                                        </md-input-container>
-                                        <br>
-                                        <h4>-Inscripción-</h4>
-                                        <br>
-                                        <md-input-container>        
-                                            <label>Temporada a la que inscribe</label>
-                                            <input type="text" ng-model="info.Temp" name="userTemp" required>
-                                            <div ng-messages="register.userTemp.$error" ng-if="register.$invalid"> 
-                                                <div ng-message="required">El campo es obligatorio</div>
-                                            </div>
-                                        </md-input-container>
-                                        <md-input-container class="md-block">
-                                            <label>Categorias:</label>
-                                            <md-select ng-model="info.Category" placeholder="selecciona una">
-                                                <md-option ng-repeat="Category in Categories" value={{Category.name}}>{{Category.name}}</md-option>
-                                            </md-select>
-                                        </md-input-container>
-                                         <md-content>
-                                        <h4>-Documentos-</h4>
-                                        <br>
-                                        <md-input-container>
-                                            <br>
-                                            <label>ACTA</label>
-                                            <input type="file" name="userACTA" file-model="file" required>
-                                             <div ng-messages="register.userACTA.$error" ng-if="register.$invalid"> 
-                                                <div ng-message="required">El campo es obligatorio</div>
-                                            </div>
-                                        </md-input-container>
-                                        <md-input-container>
-                                            <br>
-                                            <label>CURP</label>
-                                            <input type="file" name="userCURP" file-model="file" required>
-                                             <div ng-messages="register.userCURP.$error" ng-if="register.$invalid"> 
-                                                <div ng-message="required">El campo es obligatorio</div>
-                                            </div>
-                                        </md-input-container>
-                                         <md-input-container>
-                                            <br>
-                                            <label>Certificado Médico (Fútbol Americano)</label>
-                                            <input type="file" name="userCURP" file-model="file" required>
-                                             <div ng-messages="register.userCURP.$error" ng-if="register.$invalid"> 
-                                                <div ng-message="required">El campo es obligatorio</div>
-                                            </div>
-                                        </md-input-container>
-                                         <md-input-container>
-                                            <br>
-                                            <label>Constancia de Estudios (Vigente)</label>
-                                            <input type="file" name="userCURP" file-model="file" required>
-                                             <div ng-messages="register.userCURP.$error" ng-if="register.$invalid"> 
-                                                <div ng-message="required">El campo es obligatorio</div>
-                                            </div>
-                                        </md-input-container>
-                                         <md-input-container>
-                                            <br>
-                                            <label>Fotografía (Tamaño Infantil)</label>
-                                            <input type="file" name="userCURP" file-model="file" required>
-                                             <div ng-messages="register.userCURP.$error" ng-if="register.$invalid"> 
-                                                <div ng-message="required">El campo es obligatorio</div>
-                                            </div>
-                                        </md-input-container>
-                                         <md-input-container>
-                                            <br>
-                                            <label>Carta de Liberación (En su caso)</label>
-                                            <input type="file" name="userCURP" file-model="file" required>
-                                             <div ng-messages="register.userCURP.$error" ng-if="register.$invalid"> 
-                                                <div ng-message="required">El campo es obligatorio</div>
-                                            </div>
-                                        </md-input-container>
-                                         <md-input-container>
-                                            <br>
-                                            <label>Credencial del INE del Responsable</label>
-                                            <input type="file" name="userCURP" file-model="file" required>
-                                             <div ng-messages="register.userCURP.$error" ng-if="register.$invalid"> 
-                                                <div ng-message="required">El campo es obligatorio</div>
-                                            </div>
-                                        </md-input-container>
-
-                                </md-content>
-                                </md-content>
-                                <div class="text-right">
-                                    <input type="checkbox" name="TerminosCondiciones" ng-model="info.activo" required="activo">
-                                    <md-button class="md-primary md-raised" ng-click="showAdvanced($event)">
-                                      Términos y condiciones
-                                    </md-button>
-                                    <div ng-messages="register.TerminosCondiciones.$error" ng-if="register.$invalid"> 
-                                        <div ng-message="required"><font color="orange">Lee y acepta los Términos y Condiciones para continuar.</font></div>
-                                    </div>
-                                </div>
-                                <div class="text-right">
-                                    <md-button class="md-button md-fab" ng-click="showForm3()">
-                                        <div class="md-panel-outer-wrapper md-panel-is-showing" style="pointer-events: none; z-index: 100;">
-                                            <md-tooltip md-direction="top">Atras</md-tooltip>
-                                        </div>
-                                        <md-icon class="material-icon">chevron_left</md-icon>
-                                    </md-button>
-                                -->
-                                    <md-button type="submit" name="send" value="send" class="md-button md-fab" ng-disabled="register.$invalid">
-                                        <div class="md-panel-outer-wrapper md-panel-is-showing" style="pointer-events: none; z-index: 100;">
-                                            <md-tooltip md-direction="top">Enviar</md-tooltip>
-                                        </div>
-                                        <md-icon class="material-icon">send</md-icon>
-                                    </md-button>
-                                </div>
-                            </md-content>
-                        </section>
-                    </form> 
-                </md-content>
-            </md-content>
-        </div>
-    </section>
-
-    &nbsp;<br>&nbsp;
-    
-    <!-- Contact Section -->
-    <section id="contact" ng-app="contact" ng-show="showContact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading" style="color: white;">Contactanos</h2>
-                    <div class="slogan">
-                        <img src="images/Slogan.png">
-                    </div>
-                    <h3 class="section-subheading text-muted">Dejando Huella</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form method="post" name="contactform" role="form" ng-submit="submit(input)">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input ng-model="input.name" type="text" class="form-control" placeholder="Nombre *" id="name" name="name" required>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input ng-model="input.email" type="email" class="form-control" placeholder="Email *" id="email" name="email" required>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input ng-model="input.subject" type="text" class="form-control" placeholder="Asunto *" id="subject" name="subject" required>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input ng-model="input.phone" type="tel" class="form-control" placeholder="Telefono *" id="phone" name="phone" required>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea ng-model="input.Message" class="form-control" placeholder="Tu mensaje *" id="Message" name="Message" required></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button type="submit" name="submit" value="submit" ng-disabled="submitButtonDisabled"  class="btn btn-xl">Enviar mensaje</button>
-                            </div>
-                        </div>
-                    </form>
-                    <p ng-class="result" style="padding: 15px; margin: 0;">{{ resultMessage }}</p>
-                </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Footer Page-->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">Copyright© 2015 Club Naucalpan FootBall, A.C. All rights reserved</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li class="social-buttons-twitter"><a href="#" class="fa fa-twitter"></a>
-                        </li>
-                        <li class="social-buttons-facebook"><a href="https://www.facebook.com/perrosnegros.naucalpan.1/?fref=ts" class="fa fa-facebook"></a>
-                        </li>
-                        <li class="social-buttons-linkedin"><a href="#" class="fa fa-linkedin"></a>
+                            <ul class="nav navbar-nav dropdown-menu"> 
+                                <li><a ng-click="login()" role="button" ><font color="orange">Iniciar Sesión</font></a></li>
+                                <li class="divider"></li>
+                                <li><a ng-click="signIn()" role="button"><font color="orange">Registrarse</font></a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
-                <!--<div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
-                        </li>
-                    </ul> 
-                </div>--> 
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+    </nav>
+    <div class="header">
+    <!--CAROUSEL HEADER-->
+        <div class="carousel fade-carousel slide " data-ride="carousel" data-interval="4000" id="bs-carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#bs-carousel" data-slide-to="1"></li>
+                <li data-target="#bs-carousel" data-slide-to="2"></li>
+                <li data-target="#bs-carousel" data-slide-to="3"></li>
+                <li data-target="#bs-carousel" data-slide-to="4"></li>
+                <li data-target="#bs-carousel" data-slide-to="5"></li>
+                <li data-target="#bs-carousel" data-slide-to="6"></li>
+                <li data-target="#bs-carousel" data-slide-to="7"></li>
+                <li data-target="#bs-carousel" data-slide-to="8"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item slides active">
+                    <div class="slide-1"></div>
+                    <div class="head-div">
+                        <button class="btn btn-head-div btn-lg" ng-click="gotoAbout()" role="button">Cuéntame Más</button>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="fade-image">
+                        <img src="images/eventos/evento7.jpg" style="width:80%; height:100%; padding-top:50px;">
+                    </div>
+                    <div class="head-div">        
+                        <hgroup>
+                            <h1>¡Pasión y entrega!</h1>        
+                        </hgroup>       
+                        <button class="btn btn-head-div btn-lg" ng-click="gotoAbout()">Cuéntame Más</button>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="fade-image">
+                        <img  src="images/eventos/evento5.jpg" style="width:100%; height:100%; padding-top:50px; ">
+                    </div>
+                    <div class="head-div">        
+                        <button class="btn btn-head-div btn-lg" ng-click="gotoAbout()">Cuéntame Más</button>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="fade-image">
+                        <img  src="images/eventos/evento1.jpg" style="width:70%; height:100%; padding-top:50px; ">
+                    </div>
+                    <div class="head-div">        
+                        <button class="btn btn-head-div btn-lg" ng-click="gotoAbout()">Cuéntame Más</button>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="fade-image">
+                        <img  src="images/eventos/evento6.jpg" style="width:80%; height:100%; padding-top:50px;">
+                    </div>
+                    <div class="head-div">        
+                        <hgroup>
+                            <h2>¡Formando campeones!</h2>        
+                        </hgroup>       
+                        <button class="btn btn-head-div btn-lg" ng-click="gotoAbout()">Cuéntame Más</button>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="fade-image">
+                        <img  src="images/eventos/evento2.jpg" style="width:70%; height:100%; padding-top:50px; ">
+                    </div>
+                    <div class="head-div">        
+                        <button class="btn btn-head-div btn-lg" ng-click="gotoAbout()">Cuéntame Más</button>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="fade-image">
+                        <img  src="images/eventos/evento8.jpg" style="width:80%; height:100%; padding-top:50px;">
+                    </div>
+                    <div class="head-div">        
+                        <hgroup>
+                            <h1>¡Vivo!</h1>        
+                        </hgroup>       
+                        <button class="btn btn-head-div btn-lg" ng-click="gotoAbout()">Cuéntame Más</button>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="fade-image">
+                        <img  src="images/eventos/evento4.jpg" style="width:90%; height:100%; padding-top:50px; ">
+                    </div>
+                    <div class="head-div">        
+                        <button class="btn btn-head-div btn-lg" ng-click="gotoAbout()">Cuéntame Más</button>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="fade-image">
+                        <img  src="images/eventos/evento3.jpg" style="width:90%; height:100%; padding-top:50px; ">
+                    </div>
+                    <div class="head-div">        
+                        <button class="btn btn-head-div btn-lg" ng-click="gotoAbout()">Cuéntame Más</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
- </body>
- </md-content>
+    </div>
+</body>
+<!--Footer Page-->
+<footer class="container" flex>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="copyright pull-left">Copyright© 2015 Club Naucalpan FootBall, A.C. All rights reserved</span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li class="social-buttons-twitter"><a href="#" class="fa fa-twitter"></a>
+                    </li>
+                    <li class="social-buttons-facebook"><a href="https://www.facebook.com/perrosnegros.naucalpan.1/?fref=ts" class="fa fa-facebook"></a>
+                    </li>
+                    <li class="social-buttons-linkedin"><a href="#" class="fa fa-linkedin"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 pull-right">
+                <ul class="list-inline quicklinks">
+                    <li><a ng-click="gotoNoticePrivacy()"><font color="black">Aviso de Privacidad</font></a>
+                    </li>
+                    <li><a href="#" ng-click="showAdvanced($event)"><font color="black">Terminos y Condiciones</font></a>
+                    </li>
+                </ul> 
+            </div>
+        </div>
+    </div>
+</footer>
+</md-content>
+
