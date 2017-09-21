@@ -8,7 +8,7 @@
 		return{
 			restrict:'E',
 			replace:true,
-			templateUrl:'html/system/home.html',
+			templateUrl:'html/system/about.html',
 			controller: 'mapController'
 		};
 	})

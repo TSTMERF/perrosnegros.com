@@ -129,11 +129,11 @@ md-input-container{
 	padding-right: 50px;
 	padding-left:50px;
 }
-/*.meanModule md-content .ext-content{
-  padding: 200px;
+.meanModule md-content .ext-content{
+  padding: 2p0px;
   margin: 100px;
   background-color: #1FBD1C;
-}*/
+}
 /*Angular Styles*/
 md-tooltip {
 	font-size: 15px !important;

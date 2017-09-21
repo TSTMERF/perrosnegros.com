@@ -93,7 +93,31 @@
 					'html/users/parents.html',
 					'html/users/pagos.html',
 					'html/system/instrucciones.html',
-					'html/system/TerminosCondiciones.html'
+					'html/system/TerminosCondiciones.html',
+					'html/system/Instalaciones/Entrenamiento.html',
+					'html/system/Instalaciones/PastoS.html',
+					'html/system/Instalaciones/PastoS.html',
+					'html/system/Instalaciones/TribunaL.html',
+					'html/system/Instalaciones/TribunaV.html',
+					'html/system/Instalaciones/PalcosS.html',
+					'html/system/Instalaciones/BanosTL.html',
+					'html/system/Instalaciones/MarcadorE.html',
+					'html/system/Instalaciones/Casilleros.html',
+					'html/system/Instalaciones/MedicalService.html',
+					'html/system/Instalaciones/Gimnasio.html',
+					'html/system/Instalaciones/Palcos.html',
+					'html/system/Instalaciones/Buildings.html',
+					'html/system/Instalaciones/Auditorio.html',
+					'html/system/Instalaciones/Cafeteria.html',
+					'html/system/Instalaciones/Boutique.html',
+					'html/system/Instalaciones/AreaAdm.html',
+					'html/system/Instalaciones/EFYJ.html',
+					'html/system/Instalaciones/CanchaB.html',
+					'html/system/Instalaciones/BanosV.html',
+					'html/system/Instalaciones/Vestidores.html',
+					'html/system/Jugadores/perfil.html'
+
+
 
 				];
 				//Get all the files to the templateCache

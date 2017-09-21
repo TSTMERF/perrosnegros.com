@@ -1,0 +1,175 @@
+<md-content ng-controller="eventController">
+    <!--HEADER-->
+    <md-content ng-controller='meanController'>
+        <body id="top" class="index" layout="column">
+        <nav flex layout-xs="column" layout="row" class="navbar navbar-default navbar-fixed-top" >
+            <div flex class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div flex class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+                            <span class="sr-only">Ocultar/Desplegar Menu</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    <a class="navbar-brand pointer" ng-click="gotoTop()">Perros Negros</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling 
+                        I just remove the collapese class in the next div to make it responsive -->
+                <div flex  class="collapse navbar-collapse " id="navegacion-fm">
+                    <ul class="nav navbar-nav navbar-right" >
+                        <li class="nav-item">
+                            <a  class="pointer" ng-click="gotoAbout()" >Quienes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a  class="pointer" ng-click="gotoFacilities()">Instalaciones</a>
+                        </li >
+                        <li class="nav-item" >
+                            <a class="pointer" ng-click="gotoCategory()" >Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer"  href="Galeria/index.html">Album</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoEvent()">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoContact()">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoNoticePrivacy()" href="#">Aviso de Privacidad</a>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <md-button class="md-icon-button md-primary  dropdown-toggle " data-toggle="dropdown">
+                                <md-icon class="material-icons">account_circle</md-icon>
+                            </md-button>
+                            <ul class="nav navbar-nav dropdown-menu"> 
+                                <li><a ng-click="login()" role="button" ><font color="orange">Iniciar Sesión</font></a></li>
+                                <li class="divider"></li>
+                                <li><a ng-click="signIn()"><font color="orange">Registrarse</font></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Eventos</h2>
+                    <div class="slogan">
+                        <img src="images/Slogan.png">
+                    </div>
+                    <h3 class="section-subheading text-muted">Dejando Huella</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+        <md-grid-list md-cols="3" md-cols-sm="1" md-cols-md="2" md-cols-gt-md="3" md-row-height-gt-md="1:1" md-row-height="4:3">
+            <md-grid-tile>
+                <div class="container-event">
+                    <img src="images/eventos/evento1.jpg" class="event-image">  
+                    <div class="textOverlay">
+                        <h3> Torneo de Tocho</h3><hr>
+                        <p>
+                            Inscripción gratuita <br>
+                            Início 19 Agosto <br>
+                            Sabados 10:45 am <br>
+                            llama al 55-13-89-89-35.
+                        </p>
+                    </div>
+                </div>
+            </md-grid-tile>
+            <md-grid-tile>
+                <div class="container-event">
+                    <img src="images/eventos/evento2.jpg" class="event-image">
+                    <div class="textOverlay">
+                        <h3>Convocatoría Baby's</h3><hr>
+                        <p>
+                            Ardillas de 5-6 años <br>
+                            Castores desde 7 años<br>
+                            Zorros desde 8 años<br>
+                            Sabados 12 de Agosto.
+                        </p>
+                    </div>
+                </div>
+            </md-grid-tile>
+            <md-grid-tile>
+                <div class="container-event">
+                    <img src="images/eventos/evento4.jpg" class="event-image">
+                    <div class="textOverlay">
+                         <h3>Convocatoría Baby's Otoño 2017!</h3><hr>
+                        <p>
+                            A partir del <br>
+                            Sabados 12 de Agosto<br>
+                            9:30 am.
+                        </p>
+                    </div>
+                </div>
+            </md-grid-tile>
+            <md-grid-tile>
+                <div class="container-event">
+                    <img src="images/eventos/evento5.jpg" class="event-image">
+                    <div class="textOverlay">
+                     <h3>Convocatoría Femenil Otoño 2017</h3><hr>
+                        <p>     
+                            <ul style="list-style-type:none"><li>Categorias:</li></ul>                   
+                            <ul>
+                                <li> Kid's Jueves y Viernes 5:30 pm</li>
+                                <li>Rockies Miércoles a Viernes 5:30</li>
+                                <li>Junior Miércoles a Viernes 6:30</li>
+                                <li>Sabados todas las categorías 10:00 am</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </md-grid-tile>
+            <md-grid-tile>
+                <div class="container-event">
+                    <img src="images/eventos/evento3.jpg" class="event-image">
+                    <div class="textOverlay"> 
+                        <h3>Convocatoría Varonil Juvenil Otoño 2017</h3><hr>
+                        <p>
+                            Entrenamientos de <br>
+                            Lunes a Viernes<br>
+                            de 6:00 a  8:00 pm.
+                        </p>
+                    </div>
+                </div>
+            </md-grid-tile>
+        </md-grid-list>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright pull-left">Copyright© 2015 Club Naucalpan FootBall, A.C. All rights reserved</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="social-buttons-twitter"><a href="#" class="fa fa-twitter"></a>
+                        </li>
+                        <li class="social-buttons-facebook"><a href="https://www.facebook.com/perrosnegros.naucalpan.1/?fref=ts" class="fa fa-facebook"></a>
+                        </li>
+                        <li class="social-buttons-linkedin"><a href="#" class="fa fa-linkedin"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 pull-right">
+                    <ul class="list-inline quicklinks">
+                        <li><a ng-click="gotoNoticePrivacy()"><font color="black">Aviso de Privacidad</font></a>
+                        </li>
+                        <li><a href="#" ng-click="showAdvanced($event)"><font color="black">Terminos y Condiciones</font></a>
+                        </li>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    </footer>
+    </body>
+    </md-content>
+</md-content>

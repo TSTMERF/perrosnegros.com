@@ -1,0 +1,439 @@
+<md-content ng-controller="categoryController as ctrl"">
+    <md-content ng-controller='meanController'>
+        <body id="top" class="index" layout="column">
+        <nav flex layout-xs="column" layout="row" class="navbar navbar-default navbar-fixed-top" >
+            <div flex class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div flex class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+                            <span class="sr-only">Ocultar/Desplegar Menu</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    <a class="navbar-brand pointer" ng-click="gotoTop()">Perros Negros</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling 
+                        I just remove the collapese class in the next div to make it responsive -->
+                <div flex  class="collapse navbar-collapse " id="navegacion-fm">
+                    <ul class="nav navbar-nav navbar-right" >
+                        <li class="nav-item">
+                            <a  class="pointer" ng-click="gotoAbout()" >Quienes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a  class="pointer" ng-click="gotoFacilities()">Instalaciones</a>
+                        </li >
+                        <li class="nav-item" >
+                            <a class="pointer" ng-click="gotoCategory()">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer"  href="Galeria/index.html">Album</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoEvent()">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoContact()">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoNoticePrivacy()">Aviso de Privacidad</a>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <md-button class="md-icon-button md-primary  dropdown-toggle " data-toggle="dropdown">
+                                <md-icon class="material-icons">account_circle</md-icon>
+                            </md-button>
+                            <ul class="nav navbar-nav dropdown-menu"> 
+                                <li><a ng-click="login()" role="button" ><font color="orange">Iniciar Sesión</font></a></li>
+                                <li class="divider"></li>
+                                <li><a ng-click="signIn()"><font color="orange">Registrarse</font></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    <section>
+       <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Categorias</h2>
+                    <div class="slogan">
+                        <img src="images/Slogan.png">
+                    </div>
+                    <h3 class="section-subheading text-muted">Dejando Huella</h3>
+                </div>
+            </div>
+            <div>
+                <!--menu bar-->
+                <md-toolbar class="md-menu-toolbar">
+                    <div layout="row">
+                        <md-toolbar-filler layout layout-align="center center">
+                             <img src="images/perro1.png">
+                        </md-toolbar-filler>
+                    <div>
+                        <h2 class="md-toolbar-tools">Categorias</h2>
+                        <md-menu-bar>
+                            <md-menu>
+                                <md-button ng-click="$mdMenu.open()" ><a href="#baby">Baby</a></md-button>
+                                <md-menu-content>
+                                    <md-menu-item><md-button ng-click="gotoArdillas()"><a href="#ardillas">Ardillas</a></md-button></md-menu-item>
+                                    <md-menu-divider></md-menu-divider>
+                                    <md-menu-item><md-button ng-click="gotoCastores()"><a href="#castores">Castores</a></md-button></md-menu-item>
+                                    <md-menu-divider></md-menu-divider>
+                                    <md-menu-item><md-button ng-click="gotoZorros()"><a href="#zorros">Zorros</a></md-button></md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                            <md-menu>
+                                <md-button ng-click="$mdMenu.open()" ><a href="#childish">Infantil</a></md-button>
+                                <md-menu-content>
+                                    <md-menu-item><md-button ng-click="gotoRabbits()"><a href="#rabbits">Rabbits</a></md-button></md-menu-item>
+                                    <md-menu-divider></md-menu-divider>
+                                    <md-menu-item><md-button ng-click="gotoHornets()"><a href="#hornets">Hornets</a></md-button></md-menu-item>
+                                    <md-menu-divider></md-menu-divider>
+                                    <md-menu-item><md-button ng-click="gotoIrons()"><a href="#irons">Irons</a></md-button></md-menu-item>
+                                    <md-menu-divider></md-menu-divider>
+                                    <md-menu-item><md-button ng-click="gotoFalcons()"><a href="#falcons">Falcons</a></md-button></md-menu-item>
+                                    <md-menu-divider></md-menu-divider>
+                                    <md-menu-item><md-button ng-click="gotoTauros()"><a href="#tauros">Tauros</a></md-button></md-menu-item>
+                                    <md-menu-divider></md-menu-divider>
+                                    <md-menu-item><md-button ng-click="gotoPonys()"><a href="#ponys">Ponys</a></md-button></md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                            <md-menu>
+                                <md-button ng-click="$mdMenu.open()"><a href="#youth">Juvenil</a></md-button>
+                                <md-menu-content>
+                                    <md-menu-item><md-button ng-click="gotoSpringY()"><a href="#spring">Primavera</a></md-button></md-menu-item>
+                                    <md-menu-divider></md-menu-divider>
+                                    <md-menu-item><md-button ng-click="gotoAutumnY()"><a href="#autumn">Otoño</a></md-button></md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                            <md-menu>
+                                <md-button ng-click="$mdMenu.open()"><a href="#female">Femenil</a></md-button>
+                                <md-menu-content>
+                                    <md-menu-item><md-button ng-click="gotoSpringF()"><a href="#springF">Primavera/Otoño</a></md-button></md-menu-item>
+                                    <md-menu-divider></md-menu-divider>
+                                    <md-menu-item><md-button ng-click="gotoAutumnF()"><a href="#autumnF">Otoño/Primavera</a></md-button></md-menu-item>
+                                    <md-menu-divider></md-menu-divider>
+                                    <md-menu-item><md-button ng-click="gotoSpringF2()"><a href="#springF2">Otra</a></md-button></md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                        </md-menu-bar>
+                    </div>
+                    </div>
+                </md-toolbar>
+                <!--content menu-->
+                <md-content class="md-padding" layout-sm="column" layout-xs="column" style="height:2000px;" > 
+                <!--BABYS-->
+                <div id="baby">
+                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="ardillas" ng-show="showArdillas">
+                        <md-card >
+                            <md-card-header>
+                                <md-card-header-text>
+                                    <span class="md-title">Ardillas</span>
+                                    <span class="md-subhead">Baby's</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                                 <img ng-src="images/Entrenamiento 5.jpg" class="md-card-image">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-subhead">Descripcion de imagen:</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                 <md-card-footer>
+                                Perros Negros Naucalpan. 
+                                </md-card-footer>
+                        </md-card>
+                    </div>
+                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="castores" ng-show="showCastores">
+                        <md-card >
+                            <md-card-header>
+                                <md-card-header-text>
+                                    <span class="md-title">Castores</span>
+                                    <span class="md-subhead">Baby's</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                                 <img ng-src="images/Entrenamiento 5.jpg" class="md-card-image">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-subhead">Descripcion de imagen:</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                 <md-card-footer>
+                                Perros Negros Naucalpan. 
+                                </md-card-footer>
+                        </md-card>
+                    </div>
+                    <div  flex flex-xs flex-gt-xs="auto" layout="column" id="zorros" ng-show="showZorros">
+                        <md-card >
+                            <md-card-header>
+                                <md-card-header-text>
+                                    <span class="md-title">Zorros</span>
+                                    <span class="md-subhead">Baby's</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                                 <img ng-src="images/Entrenamiento 5.jpg" class="md-card-image">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-subhead">Descripcion de imagen:</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                 <md-card-footer>
+                                Perros Negros Naucalpan. 
+                                </md-card-footer>
+                        </md-card>
+                    </div>
+                </div>
+                <!--INFANTILES-->
+                <div id="childish">
+                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="rabbits" ng-show="showRabbits">
+                        <md-card >
+                            <md-card-header >
+                                <md-card-header-text>
+                                    <span class="md-title">Rabbits</span>
+                                    <span class="md-subhead">Infantil</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                                 <img ng-src="images/rabbits.jpg"  class="md-card-image">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-subhead">Descripcion de imagen:</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                <md-card-footer>
+                                Perros Negros Naucalpan. 
+                                </md-card-footer>
+                        </md-card>
+                    </div>
+                    <div flex felx-xs flex-gt-xs="auto" layout="column" id="hornets" ng-show="showHornets">
+                        <md-card >
+                            <md-card-header>
+                                <md-card-header-text>
+                                    <span class="md-title">Hornets</span>
+                                    <span class="md-subhead">Infantil</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                                 <img ng-src="images/hornets.jpg" class="md-card-image" >
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-subhead">Descripcion de imagen:</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                 <md-card-footer>
+                                Perros Negros Naucalpan. 
+                                </md-card-footer>
+                        </md-card>
+                    </div>
+                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="irons" ng-show="showIrons">
+                        <md-card>
+                            <md-card-header>
+                                <md-card-header-text >
+                                    <span class="md-title">Irons</span>
+                                    <span class="md-subhead">Infantil</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                                 <img ng-src="images/irons.jpg" class="md-card-image">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-">Descripcion de imagen:</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                 <md-card-footer>
+                                Perros Negros Naucalpan. 
+                                </md-card-footer>
+                        </md-card>
+                    </div>
+                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="falcons" ng-show="showFalcons">
+                        <md-card>
+                            <md-card-header>
+                                <md-card-header-text>
+                                    <span class="md-title">Falcons</span>
+                                    <span class="md-subhead">Infantil</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                                 <img ng-src="images/falcons.jpg" class="md-card-image">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-subhead">Descripcion de imagen:</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                 <md-card-footer>
+                                Perros Negros Naucalpan. 
+                                </md-card-footer>
+                        </md-card>
+                    </div>
+                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="tauros" ng-show="showTauros">
+                        <md-card >
+                            <md-card-header>
+                                <md-card-header-text>
+                                    <span class="md-title">Tauros</span>
+                                    <span class="md-subhead">Infantil</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                                 <img ng-src="images/tauros.jpg" class="md-card-image">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-subhead">Descripcion de imagen:</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                 <md-card-footer>
+                                Perros Negros Naucalpan. 
+                                </md-card-footer>
+                        </md-card>
+                    </div>
+                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="ponys" ng-show="showPonys">
+                        <md-card >
+                            <md-card-header>
+                                <md-card-header-text>
+                                    <span class="md-title">Ponys</span>
+                                    <span class="md-subhead">Infantil</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                                 <img ng-src="images/ponys.jpg" class="md-card-image">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-subhead">Descripcion de imagen:</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                 <md-card-footer>
+                                Perros Negros Naucalpan. 
+                                </md-card-footer>
+                        </md-card>
+                    </div>
+                </div>
+                <!--JUVENIL-->
+                <div id="youth">
+                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="spring" ng-show="showSpringYouth">
+                        <md-card >
+                            <md-card-header>
+                                <md-card-header-text>
+                                    <span class="md-title">Primavera</span>
+                                    <span class="md-subhead">Juvenil</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                                 <img ng-src="images/Entrenamiento 1.jpg" class="md-card-image">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-subhead">Descripcion de imagen:</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                 <md-card-footer>
+                                Perros Negros Naucalpan. 
+                                </md-card-footer>
+                        </md-card>
+                    </div>
+                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="autumn" ng-show="showAutumnYouth">
+                        <md-card >
+                            <md-card-header>
+                                <md-card-header-text>
+                                    <span class="md-title">Otoño</span>
+                                    <span class="md-subhead">Juvenil</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                                 <img ng-src="images/Entrenamiento 1.jpg" class="md-card-image">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-subhead">Descripcion de imagen:</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                 <md-card-footer>
+                                Perros Negros Naucalpan. 
+                                </md-card-footer>
+                        </md-card>
+                    </div>
+                </div>
+                <!--FEMENIL-->
+                <div id="female">
+                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="springF" ng-show="showSpringFemale">
+                        <md-card >
+                            <md-card-header>
+                                <md-card-header-text>
+                                    <span class="md-title">Primavera</span>
+                                    <span class="md-subhead">Femenil</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                                 <img ng-src="images/Gimnasio 6.jpg" class="md-card-image">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-subhead">Descripcion de imagen:</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                 <md-card-footer>
+                                Perros Negros Naucalpan. 
+                                </md-card-footer>
+                        </md-card>
+                    </div>
+                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="autumnF" ng-show="showAutumnFemale">
+                        <md-card >
+                            <md-card-header>
+                                <md-card-header-text>
+                                    <span class="md-title">Otoño</span>
+                                    <span class="md-subhead">Femenil</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                                 <img ng-src="images/Gimnasio 6.jpg" class="md-card-image">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-subhead">Descripcion de imagen:</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                 <md-card-footer>
+                                Perros Negros Naucalpan. 
+                                </md-card-footer>
+                        </md-card>
+                    </div>
+                    <div flex flex-xs flex-gt-xs="auto" layout="column" id="springF2" ng-show="showSpringFemale2">
+                        <md-card >
+                            <md-card-header>
+                                <md-card-header-text>
+                                    <span class="md-title">Primavera2</span>
+                                    <span class="md-subhead">Femenil</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                                 <img ng-src="images/Gimnasio 6.jpg" class="md-card-image">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-subhead">Descripcion de imagen:</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                 <md-card-footer>
+                                Perros Negros Naucalpan. 
+                                </md-card-footer>
+                        </md-card>
+                    </div>
+                </div>
+                </md-content>
+            </div>
+        </div>
+    </section> 
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright pull-left">Copyright© 2015 Club Naucalpan FootBall, A.C. All rights reserved</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="social-buttons-twitter"><a href="#" class="fa fa-twitter"></a>
+                        </li>
+                        <li class="social-buttons-facebook"><a href="https://www.facebook.com/perrosnegros.naucalpan.1/?fref=ts" class="fa fa-facebook"></a>
+                        </li>
+                        <li class="social-buttons-linkedin"><a href="#" class="fa fa-linkedin"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 pull-right">
+                    <ul class="list-inline quicklinks">
+                        <li><a ng-click="gotoNoticePrivacy()"><font color="black">Aviso de Privacidad</font></a>
+                        </li>
+                        <li><a ng-click="showAdvanced($event)"><font color="black">Terminos y Condiciones</font></a>
+                        </li>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    </footer>
+    </body>
+    </md-content>
+    </md-content>

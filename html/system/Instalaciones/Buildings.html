@@ -1,0 +1,56 @@
+<md-dialog aria-label="Términos y Condiciones">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools" style="background-color: black">
+        <h2><span> SALA DE JUNTAS </span></h2>
+        <md-card-avatar>
+           <img src="images/perro1.png" class="md-user-avatar"/>
+        </md-card-avatar>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="container">
+          <div class="row col-xs-12 col-sm-9 col-md-10 col-lg-7">
+              <div id="carousel-perros" class="carousel slide" data-ride="carousel">
+                
+                      <!-- Indicators -->
+                      <ol class="indi left carousel-indicators">
+                          <li data-target="#carousel-perros" data-slide-to="0" class="active"></li>
+                          <li data-target="#carousel-perros" data-slide-to="1"></li>
+                      </ol>
+                        
+                      <!-- Wrapper for slides -->
+                      <div class="carousel-inner">
+                          <div class="item active">
+                            <img src="images/Instalaciones/O1.jpg" alt="...">   
+                          </div>
+                      
+                          <div class="item">
+                              <img src="images/Instalaciones/O2.jpg" alt="...">
+                          </div>
+                      </div>
+                      
+                      <!-- Controls -->
+                      <a class="entre left carousel-control" href="#carousel-perros" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left"></span>
+                      </a>
+                      
+                      <a class="entre right carousel-control" href="#carousel-perros" data-slide="next">
+                          <span class="glyphicon glyphicon-chevron-right"></span>
+                      </a>
+                
+              </div>
+            </div>
+          </div> 
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="answer('useful')" class="md-primary">
+        CERRAR
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

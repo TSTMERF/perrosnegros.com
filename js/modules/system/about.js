@@ -8,11 +8,11 @@
 		return{
 			restrict:'E',
 			replace:true,
-			templateUrl:'html/system/home.html',
+			templateUrl:'html/system/about.html',
 			controller: 'aboutController'
 		};
 	})
-	.controller('aboutController', function($mdDialog, $scope){
+	.controller('aboutController', function($mdDialog,$scope){
 		this.missionAction = function(ev) {
       		$mdDialog.show($mdDialog.alert()
         		.title('Misión')
@@ -37,7 +37,7 @@
         		.targetEvent(ev)
     		);
     	};
-        /*Directiva*/
+         /*Directiva*/
         $scope.directiveAction = function(ev) {
         $mdDialog.show({
             controller: DialogController,
@@ -57,6 +57,6 @@
         $scope.answer = function(answer) {
             $mdDialog.hide(answer);
         };
-      }
+      } 
 	});
 })();

@@ -4,9 +4,9 @@ session_start();
 
 <?php
 
-$host_db = "localhost";
-$user_db = "root";
-$pass_db = "promastinc";
+$host_db = "50.62.209.75";
+$user_db = "PN1";
+$pass_db = "P_NegrosN.1_";
 $db_name = "db_pn";
 $tbl_name = "usuarios";
 

@@ -1,0 +1,139 @@
+<md-content  ng-app="contact" ng-controller="contactController">   
+    <md-content ng-controller='meanController'>
+        <body id="top" class="index" layout="column">
+        <nav flex layout-xs="column" layout="row" class="navbar navbar-default navbar-fixed-top" >
+            <div flex class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div flex class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+                            <span class="sr-only">Ocultar/Desplegar Menu</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    <a class="navbar-brand pointer" ng-click="gotoTop()">Perros Negros</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling 
+                        I just remove the collapese class in the next div to make it responsive -->
+                <div flex  class="collapse navbar-collapse " id="navegacion-fm">
+                    <ul class="nav navbar-nav navbar-right" >
+                        <li class="nav-item">
+                            <a  class="pointer" ng-click="gotoAbout()" >Quienes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a  class="pointer" ng-click="gotoFacilities()">Instalaciones</a>
+                        </li >
+                        <li class="nav-item" >
+                            <a class="pointer" ng-click="gotoCategory()">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer"  href="Galeria/index.html">Album</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoEvent()">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoContact()">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoNoticePrivacy()">Aviso de Privacidad</a>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <md-button class="md-icon-button md-primary  dropdown-toggle " data-toggle="dropdown">
+                                <md-icon class="material-icons">account_circle</md-icon>
+                            </md-button>
+                            <ul class="nav navbar-nav dropdown-menu"> 
+                                <li><a ng-click="login()" role="button" ><font color="orange">Iniciar Sesión</font></a></li>
+                                <li class="divider"></li>
+                                <li><a ng-click="signIn()"><font color="orange">Registrarse</font></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading" style="color: black;">Contactanos</h2>
+                    <div class="slogan">
+                        <img src="images/Slogan.png">
+                    </div>
+                    <h3 class="section-subheading text-muted">Dejando Huella</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form method="post" name="contactform" role="form" ng-submit="submit(input)">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input ng-model="input.name" type="text" class="form-control" placeholder="Nombre *" id="name" name="name" required>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input ng-model="input.email" type="email" class="form-control" placeholder="Email *" id="email" name="email" required>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input ng-model="input.subject" type="text" class="form-control" placeholder="Asunto *" id="subject" name="subject" required>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input ng-model="input.phone" type="tel" class="form-control" placeholder="Telefono *" id="phone" name="phone" required>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea ng-model="input.Message" class="form-control" placeholder="Tu mensaje *" id="Message" name="Message" required></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" name="submit" value="submit" ng-disabled="submitButtonDisabled"  class="btn btn-xl">Enviar mensaje</button>
+                            </div>
+                        </div>
+                    </form>
+                    <p ng-class="result" style="padding: 15px; margin: 0;">{{ resultMessage }}</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright pull-left">Copyright© 2015 Club Naucalpan FootBall, A.C. All rights reserved</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="social-buttons-twitter"><a href="#" class="fa fa-twitter"></a>
+                        </li>
+                        <li class="social-buttons-facebook"><a href="https://www.facebook.com/perrosnegros.naucalpan.1/?fref=ts" class="fa fa-facebook"></a>
+                        </li>
+                        <li class="social-buttons-linkedin"><a href="#" class="fa fa-linkedin"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 pull-right">
+                    <ul class="list-inline quicklinks">
+                        <li><a ng-click="gotoNoticePrivacy()"><font color="black">Aviso de Privacidad</font></a>
+                        </li>
+                        <li><a ng-click="showAdvanced($event)"><font color="black">Terminos y Condiciones</font></a>
+                        </li>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    </footer>
+    </body>
+    </md-content>
+</md-content>

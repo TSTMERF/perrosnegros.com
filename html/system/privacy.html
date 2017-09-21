@@ -1,0 +1,178 @@
+ <md-content ng-controller="privacyController">
+    <md-content ng-controller='meanController'>
+        <body id="top" class="index" layout="column">
+        <nav flex layout-xs="column" layout="row" class="navbar navbar-default navbar-fixed-top" >
+            <div flex class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div flex class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+                            <span class="sr-only">Ocultar/Desplegar Menu</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    <a class="navbar-brand pointer" ng-click="gotoTop()">Perros Negros</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling 
+                        I just remove the collapese class in the next div to make it responsive -->
+                <div flex  class="collapse navbar-collapse " id="navegacion-fm">
+                    <ul class="nav navbar-nav navbar-right" >
+                        <li class="nav-item">
+                            <a  class="pointer" ng-click="gotoAbout()" >Quienes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a  class="pointer" ng-click="gotoFacilities()">Instalaciones</a>
+                        </li >
+                        <li class="nav-item" >
+                            <a class="pointer" ng-click="gotoCategory()">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer"  href="Galeria/index.html">Album</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoEvent()">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoContact()">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pointer" ng-click="gotoNoticePrivacy()">Aviso de Privacidad</a>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <md-button class="md-icon-button md-primary  dropdown-toggle " data-toggle="dropdown">
+                                <md-icon class="material-icons">account_circle</md-icon>
+                            </md-button>
+                            <ul class="nav navbar-nav dropdown-menu"> 
+                                <li><a ng-click="login()" role="button" ><font color="orange">Iniciar Sesión</font></a></li>
+                                <li class="divider"></li>
+                                <li><a ng-click="signIn()"><font color="orange">Registrarse</font></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Aviso de privacidad</h2>
+                        <div class="slogan">
+                            <img src="images/Slogan.png">
+                        </div>
+                        <h3 class="section-subheading text-muted">Dejando Huella</h3>
+                    </div>
+                </div>
+            </div>
+            <md-toolbar>
+                <div class="md-toolbar-tools" >
+                    <md-toolbar-filler layout layout-align="center center">
+                         <img src="images/perro1.png">
+                    </md-toolbar-filler>   
+                    <h2> Aviso de Privacidad</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button">
+                       <i class="material-icons">menu</i>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <md-content class="page-container">
+                <md-card class="page" layout-padding>
+                <p>De acuerdo a lo Previsto en la “Ley Federal de Protección de Datos Personales”, declara el <b>CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS)</b>, ser una asociación legalmente constituida de conformidad con las leyes mexicanas, con domicilio en <b>Avenida Badel Powell Sin Número, Colonia Santa Cruz Acatlán, Municipio de Naucalpan, Estado de México</b>, y como responsable del tratamiento de sus datos personales, hace de su conocimiento que la información de nuestros Socios, Asociados,  Usuarios y Público en general  es tratada de forma estrictamente confidencial por lo que al proporcionar sus datos personales,<b> tales como:</b></br></p>
+                <div>        
+                    <ol><b>
+                        <li>Nombres Completos.</li>
+                        <li>Dirección.</li>
+                        <li>Teléfonos de Hogar, Oficina o móviles.</li>
+                        <li>Correo Electrónico.</li>
+                        <li>Ocupación.</li>
+                        <li>Grupo Sanguíneo y RH</li>
+                        <li>Alergias</li>
+                        <li>Lesiones</li> 
+                        <li>Padecimientos</li> 
+                        <li>Medicación</li> 
+                        <li>Tipo de Seguridad Social</li> 
+                        <li>No. De Póliza de seguro </li>
+                        </b>
+                    </ol>
+                </div>
+                <p>Estos serán utilizados única y exclusivamente para los siguientes fines:</p></br>
+
+                <div>
+                    <ol type="a">
+                        <li>Finalidades originarias y necesarias: Registro Interno para uso de las instalaciones del responsable como integrante en el equipo o categoría al que pertenezca el socio, asociado o usuario. En el caso de ser información proporcionada por el público en General se utilizará para <b>cualquier finalidad análoga o compatible con las anteriores.</b></li>
+
+                        <li><b>Tramites de Registro y participación</b> de nuestros Socios, Asociados y Usuarios en los torneos, campeonatos, competencias, que son organizados por las diversas Ligas Nacionales de Football Americano</li>   
+
+                        <li>Finalidades adicionales.  <b>1. Campañas informativas de las actividades del CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS).  2. Información y Prestación de Servicios del CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS) 3. Actualización de la Base de Datos del CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS).</b></li>
+                    </ol>
+                </div>
+
+                <p>En el caso de Datos Sensibles, tales como:</p></br>
+                <div>
+                    <ol>
+                        <li><b>. Datos Personales (Cónyuge, Estado Civil, Nacionalidad, Educación, Hijos, y demás relacionados).</b></li>
+                        <li><b>Referencias familiares y no familiares (Nombre, Dirección, Teléfono, relación, etc.).</b></li>
+                    </ol>
+                </div>       
+
+                <p>Estos serán utilizados única y exclusivamente para los siguientes fines:</p></br>
+                <div>
+                    <ol>
+                        <li>Informar sobre emergencias, circunstancias fortuitas o de fuerza mayor que deban ser de su conocimiento para asistir al socio, asociado o usuario.</li>
+
+                        <li>Uso de las instalaciones del <b>CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS) </b> como integrante en el equipo o categoría al que pertenezca el socio, asociado o usuario y mediante la base de datos estar en oportunidad de brindarle el mejor servicio.</li>
+
+                        <li>Cualquier finalidad análoga o compatible con las anteriores.</li>
+                    </ol>
+                </div>    
+                <p>Para prevenir el acceso no autorizado a sus datos personales y con el fin de asegurar que la información sea utilizada para los fines establecidos en este aviso de privacidad, hemos establecido diversos procedimientos con la finalidad de evitar el uso o divulgación no autorizados de sus datos, permitiéndonos tratarlos debidamente.</p></br>
+
+                <p>Así mismo, le informamos que sus datos personales pueden ser Transmitidos para ser tratados por personas distintas a <b>CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS)</b>, principalmente como se ha señalado previamente <b>Tramites de Registro y participación</b>de nuestros Socios, Asociados y Usuarios en los torneos, campeonatos, competencias, que son organizados por las diversas Ligas Nacionales de Football Americano.</p> </br>
+
+                <p>Todos sus datos personales son tratados de acuerdo a la legislación aplicable y vigente en el país, por ello le informamos que usted tiene en todo momento los derechos <ins><em>(ARCO) Se trata de derechos cuyo ejercicio es personalísimo, es decir, que sólo pueden ser ejercidos por el titular de los datos, por su representante legal o por un representante acreditado de acceder, rectificar, cancelar u oponerse al tratamiento que le damos a sus datos personales</em></ins>; derecho que podrá hacer valer a través del <b>Área de Privacidad encargada de la seguridad de datos personales en el Teléfono (0155) 5088-2325.</b></p></br> 
+
+                <p>A través de estos canales usted podrá actualizar sus datos y especificar el medio por el cual desea recibir información, ya que, en caso de no contar con esta especificación de su parte, <b>CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS)</b> establecerá libremente el canal que considere pertinente para enviarle información.</p></br>
+
+                <p>Este aviso de privacidad podrá ser modificado por <b>CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS)</b>, dichas modificaciones serán oportunamente informadas a través de correo electrónico, teléfono, o cualquier otro medio de comunicación que <b>CLUB NAUCALPAN FOOTBALL A.C. (PERROS NEGROS)</b> determine para tal efecto.</p></br><br>
+
+                <p><b>ATENTAMENTE</b></p><br><br>
+                <p><b>CLUB NAUCALPAN FOOTBALL A.C.</b></p>
+                <p><b>“PERROS NEGROS”</b></p><br><br>
+                </md-card>    
+            </md-content>    
+        </div>
+    </section> 
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright pull-left">Copyright© 2015 Club Naucalpan FootBall, A.C. All rights reserved</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="social-buttons-twitter"><a href="#" class="fa fa-twitter"></a>
+                        </li>
+                        <li class="social-buttons-facebook"><a href="https://www.facebook.com/perrosnegros.naucalpan.1/?fref=ts" class="fa fa-facebook"></a>
+                        </li>
+                        <li class="social-buttons-linkedin"><a href="#" class="fa fa-linkedin"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 pull-right">
+                    <ul class="list-inline quicklinks">
+                        <li><a ng-click="gotoNoticePrivacy()"><font color="black">Aviso de Privacidad</font></a>
+                        </li>
+                        <li><a ng-click="showAdvanced($event)"><font color="black">Terminos y Condiciones</font></a>
+                        </li>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    </footer>
+    </body>
+    </md-content>
+</md-content>
